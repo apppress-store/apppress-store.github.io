@@ -1,6 +1,6 @@
 # App Press Store
 
-Tactile little apps for Windows, with a soft, pressed-button design.
+Free Windows apps, ready in one press: focused tools with a soft, pressed-button design.
 
 **Website:** https://apppress-store.github.io
 
