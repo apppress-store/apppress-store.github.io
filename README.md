@@ -1,4 +1,4 @@
-# App Press
+# App Press Store
 
 Tactile little apps for Windows, with a soft, pressed-button design.
 

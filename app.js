@@ -1,4 +1,4 @@
-// App Press — theme switch, floating dock, app mode tabs
+// App Press Store — theme switch, floating dock, app mode tabs
 (function () {
   var root = document.documentElement;
 
