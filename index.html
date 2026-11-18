@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Press — tactile little apps for Windows</title>
+  <meta name="description" content="Free, tiny, beautifully tactile apps for Windows. Download Dual Wallpaper: a different wallpaper on every monitor, the same on all, or one image spanned across.">
+  <meta name="theme-color" content="#ECEEF2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2A2D33" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="App Press — tactile little apps for Windows">
+  <meta property="og:description" content="Free, tiny Windows apps with a soft, pressed-button design. Start with Dual Wallpaper.">
+  <meta property="og:image" content="assets/per-light.webp">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // pick the theme before first paint: saved choice, else the system setting
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('apppress-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- top bar -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="App Press home">
+      <span class="logo raised" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="14" rx="3.5"/><path d="M16 22v4M11 27h10"/></svg>
+      </span>
+      <span class="brand-name">App <b>Press</b></span>
+    </a>
+    <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+      <span class="switch-label switch-off">Light</span>
+      <span class="switch-label switch-on">Dark</span>
+      <span class="switch-knob" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow inset-pill"><span class="dot"></span> Free · No ads · No tracking</p>
+        <h1>Tactile little apps <span class="amber-text">for Windows.</span></h1>
+        <p class="lead">Small, focused tools with a soft, pressed-button feel. Download, double-click, done — no installer, no account, nothing running in the background.</p>
+        <div class="cta-row">
+          <a class="btn btn-amber" href="downloads/DualWallpaperSoft.exe" download="Dual Wallpaper Soft.exe">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+            Download Dual Wallpaper
+          </a>
+          <a class="btn btn-soft" href="#apps">See all apps</a>
+        </div>
+        <ul class="facts">
+          <li class="inset-pill">Windows 10 &amp; 11</li>
+          <li class="inset-pill">64 KB</li>
+          <li class="inset-pill">Light &amp; dark</li>
+        </ul>
+      </div>
+      <div class="hero-shot raised">
+        <div class="shot-well inset">
+          <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper app in light mode, showing a different wallpaper on two monitors">
+          <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper app in dark mode, showing a different wallpaper on two monitors">
+        </div>
+      </div>
+    </section>
+
+    <!-- apps -->
+    <section id="apps" class="section">
+      <div class="section-head">
+        <p class="kicker">Apps</p>
+        <h2>Everything on the shelf</h2>
+      </div>
+
+      <article class="app-card raised">
+        <div class="app-top">
+          <img class="app-icon" src="assets/dual-wallpaper-icon.png" width="64" height="64" alt="">
+          <div class="app-title">
+            <h3>Dual Wallpaper</h3>
+            <p>A different wallpaper on every monitor — or one image on all, or spanned across.</p>
+          </div>
+          <span class="version inset-pill">v1.0</span>
+        </div>
+
+        <div class="modes" role="tablist" aria-label="App modes">
+          <button class="mode is-active" role="tab" aria-selected="true" data-shot="per">Per display</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="same">Same on all</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="span">Span across</button>
+        </div>
+
+        <div class="app-body">
+          <div class="shot-well inset app-shot" id="modeShot">
+            <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode">
+            <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode">
+          </div>
+
+          <div class="app-side">
+            <p class="mode-caption" id="modeCaption">Pick a different image for each screen. Left and right are detected from how your monitors are arranged.</p>
+            <ul class="features">
+              <li>Three modes: per display, same on all, span across</li>
+              <li>Fill, Fit, Stretch, Tile or Center</li>
+              <li>Click or drag &amp; drop an image onto a screen</li>
+              <li>Follows your Windows light / dark setting</li>
+              <li>Works with 1, 2, 3 or more monitors</li>
+              <li>Single portable .exe — copy it to any PC</li>
+            </ul>
+            <a class="btn btn-amber btn-wide" href="downloads/DualWallpaperSoft.exe" download="Dual Wallpaper Soft.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Download for Windows
+              <small>64 KB · .exe</small>
+            </a>
+            <details class="hash">
+              <summary>Verify the download (SHA-256)</summary>
+              <code class="inset">052EF9118CF12EC91DCE9071B8E9ECBF26F999B18371FDF8688AAA798C92F775</code>
+              <p>In PowerShell: <code>Get-FileHash "Dual Wallpaper Soft.exe"</code></p>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <article class="soon inset">
+        <span class="soon-icon raised" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </span>
+        <div>
+          <h3>More apps on the way</h3>
+          <p>New tools land here first. Each one stays small, free and pressed-button pretty.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- install -->
+    <section id="install" class="section">
+      <div class="section-head">
+        <p class="kicker">Install</p>
+        <h2>Up and running in a minute</h2>
+      </div>
+      <ol class="steps">
+        <li class="step raised">
+          <span class="step-num inset">1</span>
+          <h3>Download</h3>
+          <p>Grab the <b>.exe</b> above. It's a single file — nothing else to install.</p>
+        </li>
+        <li class="step raised">
+          <span class="step-num inset">2</span>
+          <h3>Open it</h3>
+          <p>Double-click. If Windows shows <b>“Windows protected your PC”</b>, click <b>More info → Run anyway</b>. This appears for new apps from small developers.</p>
+        </li>
+        <li class="step raised">
+          <span class="step-num inset">3</span>
+          <h3>Pick &amp; apply</h3>
+          <p>Choose a mode, click a screen to pick an image, then press <b>Apply wallpapers</b>.</p>
+        </li>
+      </ol>
+      <p class="tip inset"><b>Tip:</b> keep it somewhere permanent (like <b>Documents</b> or <b>Program Files</b>) and right-click → <b>Pin to Start</b>.</p>
+    </section>
+
+    <!-- faq -->
+    <section id="faq" class="section">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>Good questions</h2>
+      </div>
+      <div class="faq">
+        <details class="raised">
+          <summary>Is it safe?</summary>
+          <p>The app only talks to Windows' own wallpaper settings. It has no network code, collects nothing and doesn't run in the background. You can check the file against the SHA-256 above.</p>
+        </details>
+        <details class="raised">
+          <summary>Why does Windows warn me the first time?</summary>
+          <p>SmartScreen warns about any new app that hasn't built up a download reputation or isn't signed by a paid certificate. Click <b>More info → Run anyway</b> once and it won't ask again.</p>
+        </details>
+        <details class="raised">
+          <summary>Which Windows versions work?</summary>
+          <p>Windows 10 and Windows 11. It uses the .NET Framework that comes built into Windows, so there's nothing extra to install.</p>
+        </details>
+        <details class="raised">
+          <summary>How do I uninstall it?</summary>
+          <p>Just delete the .exe. Your wallpapers stay as they are.</p>
+        </details>
+        <details class="raised">
+          <summary>Will my wallpapers stay if I move the images?</summary>
+          <p>Windows reads wallpapers from where the image files are. Keep them in a permanent folder like <b>Pictures</b> so they don't disappear.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>App Press · Tactile little apps for Windows</p>
+    <p class="muted">Free to use. Made with soft shadows and amber light.</p>
+  </footer>
+
+  <!-- floating pressed dock -->
+  <nav class="dock raised" aria-label="Sections">
+    <span class="dock-indicator inset" aria-hidden="true"></span>
+    <a class="dock-item is-active" href="#home" data-section="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a class="dock-item" href="#apps" data-section="apps">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
+      <span>Apps</span>
+    </a>
+    <a class="dock-fab" href="downloads/DualWallpaperSoft.exe" download="Dual Wallpaper Soft.exe" aria-label="Download Dual Wallpaper">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+    </a>
+    <a class="dock-item" href="#install" data-section="install">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10M9 12h10M9 18h10M5 6h.01M5 12h.01M5 18h.01"/></svg>
+      <span>Install</span>
+    </a>
+    <a class="dock-item" href="#faq" data-section="faq">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.8 9.5a2.3 2.3 0 1 1 3.2 2.1c-.7.3-1 .8-1 1.6M12 16.5h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
