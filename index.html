@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#2A2D33" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="App Press — tactile little apps for Windows">
   <meta property="og:description" content="Free, tiny Windows apps with a soft, pressed-button design. Start with Dual Wallpaper.">
-  <meta property="og:image" content="assets/per-light.webp">
+  <meta property="og:image" content="https://apppress-store.github.io/assets/per-light.webp">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,41 +43,77 @@
   </header>
 
   <main>
-    <!-- hero -->
-    <section id="home" class="hero section">
-      <div class="hero-copy">
+    <!-- ============ HOME: apps list, about, download & install ============ -->
+    <section id="home" class="home section">
+      <div class="intro">
         <p class="eyebrow inset-pill"><span class="dot"></span> Free · No ads · No tracking</p>
         <h1>Tactile little apps <span class="amber-text">for Windows.</span></h1>
-        <p class="lead">Small, focused tools with a soft, pressed-button feel. Download, double-click, done — no installer, no account, nothing running in the background.</p>
-        <div class="cta-row">
-          <a class="btn btn-amber" href="downloads/DualWallpaperSoft.exe" download="Dual Wallpaper Soft.exe">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-            Download Dual Wallpaper
-          </a>
-          <a class="btn btn-soft" href="#apps">See all apps</a>
-        </div>
-        <ul class="facts">
-          <li class="inset-pill">Windows 10 &amp; 11</li>
-          <li class="inset-pill">64 KB</li>
-          <li class="inset-pill">Light &amp; dark</li>
-        </ul>
+        <p class="lead">Small, focused tools with a soft, pressed-button feel. Pick an app below to see what it does, or download it straight away.</p>
       </div>
-      <div class="hero-shot raised">
-        <div class="shot-well inset">
-          <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper app in light mode, showing a different wallpaper on two monitors">
-          <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper app in dark mode, showing a different wallpaper on two monitors">
+
+      <!-- apps list -->
+      <div class="shelf-head">
+        <h2 class="shelf-title">Apps</h2>
+        <span class="inset-pill">1 app · more coming</span>
+      </div>
+      <div class="shelf">
+        <a class="app-tile raised" href="#dual-wallpaper" aria-label="Dual Wallpaper: see details">
+          <span class="tile-top">
+            <img class="app-icon" src="assets/dual-wallpaper-icon.png" width="64" height="64" alt="">
+            <span class="version inset-pill">v1.0</span>
+          </span>
+          <span class="tile-name">Dual Wallpaper</span>
+          <span class="tile-desc">A different wallpaper on every monitor, the same on all, or one image spanned across.</span>
+          <span class="tile-meta">Windows 10 &amp; 11 · 64 KB · Light &amp; dark</span>
+          <span class="tile-go">View details
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </span>
+        </a>
+        <div class="app-tile app-tile-soon inset" aria-label="More apps coming soon">
+          <span class="soon-icon raised" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+          <span class="tile-name">More apps on the way</span>
+          <span class="tile-desc">New tools land here first. Each one stays small, free and pressed-button pretty.</span>
         </div>
+      </div>
+
+      <!-- info + quick install -->
+      <div class="home-cards">
+        <a class="home-card raised" href="#about">
+          <span class="card-icon inset" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></svg>
+          </span>
+          <span class="card-title">About App Press</span>
+          <ul class="mini-list">
+            <li>Free apps — no ads, no accounts, no tracking</li>
+            <li>Tiny single-file downloads, nothing in the background</li>
+            <li>Soft, pressed-button design in light &amp; dark</li>
+          </ul>
+          <span class="tile-go">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+        </a>
+
+        <a class="home-card raised" href="#install">
+          <span class="card-icon inset" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+          </span>
+          <span class="card-title">Download &amp; install</span>
+          <ol class="mini-steps">
+            <li><b>Download</b> the .exe — if your browser warns, choose <b>Keep</b></li>
+            <li><b>Open</b> it — on “Windows protected your PC”, click <b>More info → Run anyway</b></li>
+            <li><b>Use</b> it — no installer needed</li>
+          </ol>
+          <span class="tile-go">Full instructions <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+        </a>
       </div>
     </section>
 
-    <!-- apps -->
+    <!-- ============ APPS (details) ============ -->
     <section id="apps" class="section">
       <div class="section-head">
         <p class="kicker">Apps</p>
-        <h2>Everything on the shelf</h2>
+        <h2>The details</h2>
       </div>
 
-      <article class="app-card raised">
+      <article id="dual-wallpaper" class="app-card raised">
         <div class="app-top">
           <img class="app-icon" src="assets/dual-wallpaper-icon.png" width="64" height="64" alt="">
           <div class="app-title">
@@ -95,8 +131,8 @@
 
         <div class="app-body">
           <div class="shot-well inset app-shot" id="modeShot">
-            <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode">
-            <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode">
+            <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode, light theme">
+            <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode, dark theme">
           </div>
 
           <div class="app-side">
@@ -114,6 +150,7 @@
               Download for Windows
               <small>64 KB · .exe</small>
             </a>
+            <p class="after-dl">Browser or Windows warning? <a href="#install">Here's what to click</a>.</p>
             <details class="hash">
               <summary>Verify the download (SHA-256)</summary>
               <code class="inset">052EF9118CF12EC91DCE9071B8E9ECBF26F999B18371FDF8688AAA798C92F775</code>
@@ -122,34 +159,26 @@
           </div>
         </div>
       </article>
-
-      <article class="soon inset">
-        <span class="soon-icon raised" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
-        </span>
-        <div>
-          <h3>More apps on the way</h3>
-          <p>New tools land here first. Each one stays small, free and pressed-button pretty.</p>
-        </div>
-      </article>
     </section>
 
-    <!-- install -->
+    <!-- ============ INSTALL ============ -->
     <section id="install" class="section">
       <div class="section-head">
         <p class="kicker">Install</p>
-        <h2>Up and running in a minute</h2>
+        <h2>Download &amp; install</h2>
+        <p class="section-lead">Every App Press app is a single .exe — no installer. New apps from small developers trigger a couple of safety warnings the first time. Here's exactly what you'll see and what to click.</p>
       </div>
+
       <ol class="steps">
         <li class="step raised">
           <span class="step-num inset">1</span>
           <h3>Download</h3>
-          <p>Grab the <b>.exe</b> above. It's a single file — nothing else to install.</p>
+          <p>Click <b>Download for Windows</b>. If your browser flags the file, keep it using the steps below.</p>
         </li>
         <li class="step raised">
           <span class="step-num inset">2</span>
           <h3>Open it</h3>
-          <p>Double-click. If Windows shows <b>“Windows protected your PC”</b>, click <b>More info → Run anyway</b>. This appears for new apps from small developers.</p>
+          <p>Double-click the file. If Windows shows <b>“Windows protected your PC”</b>, click <b>More info → Run anyway</b>.</p>
         </li>
         <li class="step raised">
           <span class="step-num inset">3</span>
@@ -157,36 +186,89 @@
           <p>Choose a mode, click a screen to pick an image, then press <b>Apply wallpapers</b>.</p>
         </li>
       </ol>
-      <p class="tip inset"><b>Tip:</b> keep it somewhere permanent (like <b>Documents</b> or <b>Program Files</b>) and right-click → <b>Pin to Start</b>.</p>
+
+      <div class="warn-grid">
+        <div class="warn raised">
+          <div class="warn-head">
+            <span class="warn-icon inset" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 8.8h7.6M9.2 13.6 5.4 7.2M14.8 13.6l-3.8 6.6"/></svg></span>
+            <h3>If Google Chrome blocks the download</h3>
+          </div>
+          <p>Chrome checks downloads with Safe Browsing. A brand-new app that few people have downloaded yet can be marked <b>“suspicious”</b> or <b>“not commonly downloaded”</b> and held back — that's about the file being new, not about anything found in it.</p>
+          <ol class="how">
+            <li>Open your downloads: click the <b>download icon</b> in the toolbar, or press <kbd>Ctrl</kbd> + <kbd>J</kbd>.</li>
+            <li>Find <b>Dual Wallpaper Soft.exe</b> and choose <b>Download suspicious file</b> (older versions say <b>Keep</b>), then confirm.</li>
+            <li>If you leave the warning alone, Chrome removes the blocked file from your download list after about an hour — just download again.</li>
+          </ol>
+          <p class="note">Only keep files from a site you trust. You can confirm it's the real file with the SHA-256 check next to the download button.</p>
+        </div>
+
+        <div class="warn raised">
+          <div class="warn-head">
+            <span class="warn-icon inset" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 15.5c0-5 3.4-9 8.2-9 4 0 6.8 2.7 6.8 6 0 2.6-2 4.3-4.4 4.3-2 0-3.1-1.1-3.1-2.6"/><path d="M4.5 15.5c1.4 2.6 4.2 4 7.3 4 2.9 0 5.4-1.2 7-3.2"/></svg></span>
+            <h3>If Microsoft Edge warns</h3>
+          </div>
+          <p>Edge may say <b>“isn't commonly downloaded”</b>.</p>
+          <ol class="how">
+            <li>In the downloads panel, point at the file and click <b>⋯</b> (More actions).</li>
+            <li>Choose <b>Keep</b>, then <b>Show more → Keep anyway</b>.</li>
+          </ol>
+          <p class="note">Firefox usually downloads it without a warning.</p>
+        </div>
+
+        <div class="warn raised">
+          <div class="warn-head">
+            <span class="warn-icon inset" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5 5 6.5v5c0 4.3 3 7.6 7 9 4-1.4 7-4.7 7-9v-5z"/><path d="M12 9v4M12 16h.01"/></svg></span>
+            <h3>If Windows says “Windows protected your PC”</h3>
+          </div>
+          <p>This is <b>Microsoft Defender SmartScreen</b>. It appears the first time you open a new app that isn't signed with a paid code-signing certificate yet.</p>
+          <ol class="how">
+            <li>Click <b>More info</b> (small link under the message).</li>
+            <li>Check the app name says <b>Dual Wallpaper Soft.exe</b>, then click <b>Run anyway</b>.</li>
+            <li>Windows remembers your choice — you won't see it again for this file.</li>
+          </ol>
+          <p class="note">If the file came from email or a zip, you can also right-click it → <b>Properties</b> → tick <b>Unblock</b> → <b>OK</b>.</p>
+        </div>
+      </div>
+
+      <p class="tip inset"><b>Tip:</b> keep the app somewhere permanent (like <b>Documents</b>) and right-click → <b>Pin to Start</b>. To uninstall, just delete the .exe — your wallpapers stay as they are.</p>
     </section>
 
-    <!-- faq -->
-    <section id="faq" class="section">
+    <!-- ============ ABOUT + FAQ ============ -->
+    <section id="about" class="section">
       <div class="section-head">
-        <p class="kicker">FAQ</p>
-        <h2>Good questions</h2>
+        <p class="kicker">About</p>
+        <h2>About App Press</h2>
       </div>
-      <div class="faq">
-        <details class="raised">
-          <summary>Is it safe?</summary>
-          <p>The app only talks to Windows' own wallpaper settings. It has no network code, collects nothing and doesn't run in the background. You can check the file against the SHA-256 above.</p>
-        </details>
-        <details class="raised">
-          <summary>Why does Windows warn me the first time?</summary>
-          <p>SmartScreen warns about any new app that hasn't built up a download reputation or isn't signed by a paid certificate. Click <b>More info → Run anyway</b> once and it won't ask again.</p>
-        </details>
-        <details class="raised">
-          <summary>Which Windows versions work?</summary>
-          <p>Windows 10 and Windows 11. It uses the .NET Framework that comes built into Windows, so there's nothing extra to install.</p>
-        </details>
-        <details class="raised">
-          <summary>How do I uninstall it?</summary>
-          <p>Just delete the .exe. Your wallpapers stay as they are.</p>
-        </details>
-        <details class="raised">
-          <summary>Will my wallpapers stay if I move the images?</summary>
-          <p>Windows reads wallpapers from where the image files are. Keep them in a permanent folder like <b>Pictures</b> so they don't disappear.</p>
-        </details>
+
+      <div class="about-grid">
+        <div class="about raised">
+          <p>App Press is a small home for <b>tactile little apps for Windows</b> — tools that do one job well and feel nice to press. Every app is designed in the same soft, pressed-button style and follows your light or dark setting.</p>
+          <ul class="features">
+            <li>Free to download and use</li>
+            <li>No ads, no accounts, no tracking</li>
+            <li>Single small .exe files — no installers, nothing running in the background</li>
+            <li>Works offline; the apps don't connect to the internet</li>
+          </ul>
+        </div>
+
+        <div class="faq">
+          <details class="raised">
+            <summary>Is it safe?</summary>
+            <p>The app only talks to Windows' own wallpaper settings. It has no network code, collects nothing and doesn't run in the background. You can check the file against the SHA-256 shown next to the download button.</p>
+          </details>
+          <details class="raised">
+            <summary>Why do Chrome and Windows warn me?</summary>
+            <p>Both warn about new apps that haven't built up a download reputation yet or aren't signed with a paid certificate. The <a href="#install">install section</a> shows exactly what to click.</p>
+          </details>
+          <details class="raised">
+            <summary>Which Windows versions work?</summary>
+            <p>Windows 10 and Windows 11. It uses the .NET Framework that comes built into Windows, so there's nothing extra to install.</p>
+          </details>
+          <details class="raised">
+            <summary>Will my wallpapers stay if I move the images?</summary>
+            <p>Windows reads wallpapers from where the image files are. Keep them in a permanent folder like <b>Pictures</b> so they don't disappear.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -214,9 +296,9 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10M9 12h10M9 18h10M5 6h.01M5 12h.01M5 18h.01"/></svg>
       <span>Install</span>
     </a>
-    <a class="dock-item" href="#faq" data-section="faq">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.8 9.5a2.3 2.3 0 1 1 3.2 2.1c-.7.3-1 .8-1 1.6M12 16.5h.01"/></svg>
-      <span>FAQ</span>
+    <a class="dock-item" href="#about" data-section="about">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>About</span>
     </a>
   </nav>
 
