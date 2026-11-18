@@ -56,6 +56,61 @@
     if (!ticking) { ticking = true; requestAnimationFrame(function () { spy(); ticking = false; }); }
   }, { passive: true });
 
+  // ---------- app search ----------
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('appSearch');
+  var searchBtn = document.getElementById('searchBtn');
+  var countPill = document.getElementById('appCount');
+  var soon = document.getElementById('soonTile');
+  var none = document.getElementById('noResults');
+  var noneTerm = document.getElementById('noResultsTerm');
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('#shelf a.app-tile'));
+  var total = tiles.length;
+  var defaultCount = countPill.textContent;
+
+  function haystack(t) {
+    return (t.textContent + ' ' + (t.getAttribute('data-search') || '')).toLowerCase();
+  }
+  function filter() {
+    var q = input.value.trim().toLowerCase();
+    var words = q.split(/\s+/).filter(Boolean);
+    var shown = 0;
+    tiles.forEach(function (t) {
+      var hay = haystack(t);
+      var ok = words.every(function (w) { return hay.indexOf(w) !== -1; });
+      t.hidden = !ok;
+      t.classList.toggle('is-match', ok && words.length > 0);
+      if (ok) shown++;
+    });
+    soon.hidden = words.length > 0;
+    none.hidden = !(words.length > 0 && shown === 0);
+    noneTerm.textContent = input.value.trim();
+    countPill.textContent = words.length ? (shown + (shown === 1 ? ' result' : ' results')) : defaultCount;
+    return shown;
+  }
+  function openSearch() {
+    document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { input.focus({ preventScroll: true }); input.select(); }, 350);
+  }
+
+  input.addEventListener('input', filter);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (filter() > 0) {
+      var first = tiles.filter(function (t) { return !t.hidden; })[0];
+      if (first) first.click();   // jump to that app's details
+    }
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; filter(); input.blur(); }
+  });
+  document.getElementById('clearSearch').addEventListener('click', function () { input.value = ''; filter(); input.focus(); });
+  searchBtn.addEventListener('click', openSearch);
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (e.key === '/' && tag !== 'input' && tag !== 'textarea' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openSearch(); }
+  });
+
   // ---------- app mode tabs swap the screenshot ----------
   var captions = {
     per:  'Pick a different image for each screen. Left and right are detected from how your monitors are arranged.',

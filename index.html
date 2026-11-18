@@ -35,11 +35,16 @@
       </span>
       <span class="brand-name">App Press <b>Store</b></span>
     </a>
-    <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
-      <span class="switch-label switch-off">Light</span>
-      <span class="switch-label switch-on">Dark</span>
-      <span class="switch-knob" aria-hidden="true"></span>
-    </button>
+    <div class="top-actions">
+      <button class="icon-btn" id="searchBtn" type="button" aria-label="Search apps" title="Search apps ( / )">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      </button>
+      <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="switch-label switch-off">Light</span>
+        <span class="switch-label switch-on">Dark</span>
+        <span class="switch-knob" aria-hidden="true"></span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -54,10 +59,18 @@
       <!-- apps list -->
       <div class="shelf-head">
         <h2 class="shelf-title">Apps</h2>
-        <span class="inset-pill">1 app · more coming</span>
+        <span class="inset-pill" id="appCount" aria-live="polite">1 app · more coming</span>
       </div>
-      <div class="shelf">
-        <a class="app-tile raised" href="#dual-wallpaper" aria-label="Dual Wallpaper: see details">
+      <form class="search inset" id="searchForm" role="search" autocomplete="off">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        <label class="sr-only" for="appSearch">Search apps</label>
+        <input id="appSearch" type="search" placeholder="Search apps — try “wallpaper” or “monitor”" enterkeyhint="search">
+        <kbd class="search-key" aria-hidden="true">/</kbd>
+      </form>
+      <div class="shelf" id="shelf">
+        <a class="app-tile raised" href="#dual-wallpaper" aria-label="Dual Wallpaper: see details"
+           data-search="dual wallpaper background desktop monitor monitors display displays screen screens multi-monitor span same image picture theme dark light">
+
           <span class="tile-top">
             <img class="app-icon" src="assets/dual-wallpaper-icon.png" width="64" height="64" alt="">
             <span class="version inset-pill">v1.0</span>
@@ -69,10 +82,14 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
           </span>
         </a>
-        <div class="app-tile app-tile-soon inset" aria-label="More apps coming soon">
+        <div class="app-tile app-tile-soon inset" id="soonTile" aria-label="More apps coming soon">
           <span class="soon-icon raised" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
           <span class="tile-name">More apps on the way</span>
           <span class="tile-desc">New tools land here first. Each one stays small, free and pressed-button pretty.</span>
+        </div>
+        <div class="app-tile no-results inset" id="noResults" hidden>
+          <span class="tile-name">No apps match “<span id="noResultsTerm"></span>”</span>
+          <span class="tile-desc">Try another word, or <button type="button" class="link-btn" id="clearSearch">show all apps</button>.</span>
         </div>
       </div>
 
@@ -158,6 +175,24 @@
             </details>
           </div>
         </div>
+
+        <div class="app-faq">
+          <h4 class="app-faq-title">Good to know</h4>
+          <div class="faq faq-compact">
+            <details class="raised">
+              <summary>Will my wallpapers stay if I move the images?</summary>
+              <p>Windows reads wallpapers from where the image files are. Keep them in a permanent folder like <b>Pictures</b> so they don't disappear.</p>
+            </details>
+            <details class="raised">
+              <summary>Which images work best for Span across?</summary>
+              <p>Wide images. Two side-by-side monitors form a very wide area, so a normal 16:9 picture gets its top and bottom cropped. Something around 5120 × 1440 fits two 2560 × 1440 screens exactly.</p>
+            </details>
+            <details class="raised">
+              <summary>What happens to my wallpapers if I delete the app?</summary>
+              <p>They stay exactly as they are — the app only changes Windows' wallpaper setting when you press <b>Apply wallpapers</b>.</p>
+            </details>
+          </div>
+        </div>
       </article>
     </section>
 
@@ -182,8 +217,8 @@
         </li>
         <li class="step raised">
           <span class="step-num inset">3</span>
-          <h3>Pick &amp; apply</h3>
-          <p>Choose a mode, click a screen to pick an image, then press <b>Apply wallpapers</b>.</p>
+          <h3>Use it</h3>
+          <p>That's it — no setup. Keep the .exe anywhere you like. Each app's card above has its own tips.</p>
         </li>
       </ol>
 
@@ -196,7 +231,7 @@
           <p>Chrome checks downloads with Safe Browsing. A brand-new app that few people have downloaded yet can be marked <b>“suspicious”</b> or <b>“not commonly downloaded”</b> and held back — that's about the file being new, not about anything found in it.</p>
           <ol class="how">
             <li>Open your downloads: click the <b>download icon</b> in the toolbar, or press <kbd>Ctrl</kbd> + <kbd>J</kbd>.</li>
-            <li>Find <b>Dual Wallpaper Soft.exe</b> and choose <b>Download suspicious file</b> (older versions say <b>Keep</b>), then confirm.</li>
+            <li>Find the app's <b>.exe</b> and choose <b>Download suspicious file</b> (older versions say <b>Keep</b>), then confirm.</li>
             <li>If you leave the warning alone, Chrome removes the blocked file from your download list after about an hour — just download again.</li>
           </ol>
           <p class="note">Only keep files from a site you trust. You can confirm it's the real file with the SHA-256 check next to the download button.</p>
@@ -212,7 +247,7 @@
             <li>In the downloads panel, point at the file and click <b>⋯</b> (More actions).</li>
             <li>Choose <b>Keep</b>, then <b>Show more → Keep anyway</b>.</li>
           </ol>
-          <p class="note">Firefox usually downloads it without a warning.</p>
+          <p class="note">Firefox usually downloads our apps without a warning.</p>
         </div>
 
         <div class="warn raised">
@@ -223,14 +258,14 @@
           <p>This is <b>Microsoft Defender SmartScreen</b>. It appears the first time you open a new app that isn't signed with a paid code-signing certificate yet.</p>
           <ol class="how">
             <li>Click <b>More info</b> (small link under the message).</li>
-            <li>Check the app name says <b>Dual Wallpaper Soft.exe</b>, then click <b>Run anyway</b>.</li>
+            <li>Check the name matches the app you downloaded, then click <b>Run anyway</b>.</li>
             <li>Windows remembers your choice — you won't see it again for this file.</li>
           </ol>
           <p class="note">If the file came from email or a zip, you can also right-click it → <b>Properties</b> → tick <b>Unblock</b> → <b>OK</b>.</p>
         </div>
       </div>
 
-      <p class="tip inset"><b>Tip:</b> keep the app somewhere permanent (like <b>Documents</b>) and right-click → <b>Pin to Start</b>. To uninstall, just delete the .exe — your wallpapers stay as they are.</p>
+      <p class="tip inset"><b>Tip:</b> keep apps somewhere permanent (like <b>Documents</b>) and right-click → <b>Pin to Start</b>. To uninstall any App Press Store app, just delete its .exe.</p>
     </section>
 
     <!-- ============ ABOUT + FAQ ============ -->
@@ -253,20 +288,28 @@
 
         <div class="faq">
           <details class="raised">
-            <summary>Is it safe?</summary>
-            <p>The app only talks to Windows' own wallpaper settings. It has no network code, collects nothing and doesn't run in the background. You can check the file against the SHA-256 shown next to the download button.</p>
+            <summary>Are App Press Store apps safe?</summary>
+            <p>Every app is a small offline tool: no network code, no data collection and nothing left running in the background. Each app lists a SHA-256 checksum next to its download so you can confirm the file is exactly the one published here.</p>
           </details>
           <details class="raised">
             <summary>Why do Chrome and Windows warn me?</summary>
             <p>Both warn about new apps that haven't built up a download reputation yet or aren't signed with a paid certificate. The <a href="#install">install section</a> shows exactly what to click.</p>
           </details>
           <details class="raised">
-            <summary>Which Windows versions work?</summary>
-            <p>Windows 10 and Windows 11. It uses the .NET Framework that comes built into Windows, so there's nothing extra to install.</p>
+            <summary>Which Windows versions are supported?</summary>
+            <p>Windows 10 and Windows 11, unless an app's card says otherwise. The apps use the .NET Framework built into Windows, so there's nothing extra to install.</p>
           </details>
           <details class="raised">
-            <summary>Will my wallpapers stay if I move the images?</summary>
-            <p>Windows reads wallpapers from where the image files are. Keep them in a permanent folder like <b>Pictures</b> so they don't disappear.</p>
+            <summary>Do the apps cost anything?</summary>
+            <p>No. Everything in the store is free, with no ads, no accounts and no in-app purchases.</p>
+          </details>
+          <details class="raised">
+            <summary>How do I uninstall an app?</summary>
+            <p>Delete its .exe file. There's no installer, so nothing else is left behind.</p>
+          </details>
+          <details class="raised">
+            <summary>Where do new apps appear?</summary>
+            <p>Right here in the app list on the home page. Use the search button at the top to find one quickly.</p>
           </details>
         </div>
       </div>
