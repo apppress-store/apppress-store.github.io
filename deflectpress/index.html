@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeflectPress – FWD Analysis Software (IRC:115 Overlay Design)</title>
+  <meta name="description" content="DeflectPress is free FWD analysis software for Windows. Analyse falling weight deflectometer data per IRC:115-2014: back calculation of layer moduli, homogeneous sections, temperature and seasonal correction, remaining life and overlay design.">
+  <meta name="keywords" content="FWD analysis software, falling weight deflectometer analysis, FWD back calculation, backcalculation of layer moduli, IRC 115 overlay design, IRC:115-2014, pavement structural evaluation, remaining life, homogeneous sections, deflection basin, KGPBACK, KUAB fwd">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://apppress-store.github.io/deflectpress/">
+  <meta name="theme-color" content="#ECEEF2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2A2D33" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="App Press Store">
+  <meta property="og:url" content="https://apppress-store.github.io/deflectpress/">
+  <meta property="og:title" content="DeflectPress – FWD Analysis Software (IRC:115 Overlay Design)">
+  <meta property="og:description" content="Free falling weight deflectometer analysis for Windows: FWD back calculation, homogeneous sections, remaining life and IRC:115 overlay design.">
+  <meta property="og:image" content="https://apppress-store.github.io/assets/deflectpress/og-deflectpress.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DeflectPress FWD analysis software showing backcalculated layer moduli">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DeflectPress – FWD Analysis Software (IRC:115 Overlay Design)">
+  <meta name="twitter:description" content="Free falling weight deflectometer analysis for Windows: FWD back calculation, remaining life and IRC:115 overlay design.">
+  <meta name="twitter:image" content="https://apppress-store.github.io/assets/deflectpress/og-deflectpress.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/deflectpress-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://apppress-store.github.io/deflectpress/#app",
+        "name": "DeflectPress",
+        "alternateName": ["FWD Analysis Software", "IRC 115 FWD Analysis"],
+        "url": "https://apppress-store.github.io/deflectpress/",
+        "description": "Free Windows FWD analysis software for structural evaluation and overlay design of flexible pavements per IRC:115-2014: falling weight deflectometer data checks, back calculation of layer moduli, homogeneous sections, temperature and seasonal correction, remaining life and bituminous overlay design.",
+        "applicationCategory": "EngineeringApplication",
+        "applicationSubCategory": "Pavement structural evaluation",
+        "operatingSystem": "Windows",
+        "softwareVersion": "1.0",
+        "fileSize": "326KB",
+        "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
+        "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
+        "screenshot": [
+          "https://apppress-store.github.io/assets/deflectpress/fwd-backcalculation-layer-moduli.webp",
+          "https://apppress-store.github.io/assets/deflectpress/homogeneous-sections-cumulative-difference.webp",
+          "https://apppress-store.github.io/assets/deflectpress/remaining-life-overlay-design.webp"
+        ],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "publisher": { "@type": "Organization", "name": "App Press Store", "url": "https://apppress-store.github.io/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "App Press Store", "item": "https://apppress-store.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "DeflectPress", "item": "https://apppress-store.github.io/deflectpress/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://apppress-store.github.io/deflectpress/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does DeflectPress do IRC:115 FWD analysis?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It follows the IRC:115-2014 workflow step by step: import the falling weight deflectometer data, check it and normalise the deflections to 40 kN, divide the road into homogeneous sections, backcalculate the layer moduli, correct them for temperature and season, take the 15th percentile design moduli, then work out remaining life and the bituminous overlay. Each step shows the clause or equation it uses." } },
+          { "@type": "Question", "name": "How does FWD back calculation of layer moduli work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "DeflectPress fits a three-layer system (bituminous, granular, subgrade) to each measured deflection basin. It uses the same objective as KGPBACK, the sum of squared relative deflection errors, with a grid search followed by Levenberg–Marquardt within the IRC:115 Appendix III modulus ranges, including Eq III.2 for the subgrade. Each point gets a fit percentage, and moduli that end on a range limit are flagged. KGPBACK output files can also be imported." } },
+          { "@type": "Question", "name": "How are the temperature and seasonal corrections applied?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The bituminous modulus is corrected to 35 °C with IRC:115 Eq 4–5, except where the code says not to (bituminous layer under 40 mm, Poor sections, cold or high-altitude areas). Granular and subgrade moduli get the seasonal correction: winter Eq 6 and Eq 9, summer Eq 7 and Eq 8, and none for post-monsoon testing. Warnings appear when values are outside each equation's range." } },
+          { "@type": "Question", "name": "How is the IRC 115 overlay design worked out from FWD data?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For each homogeneous section, DeflectPress uses the 15th percentile design moduli to find the remaining life by Eq 16/17 under the standard dual wheel. It then solves for the thinnest bituminous overlay that carries the full design traffic, as IRC:115 requires; balance traffic is available as an option. The overlay material is set automatically: VG40 at 3000 MPa for NH and expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 and 9.2)." } },
+          { "@type": "Question", "name": "How does it find homogeneous sections?",
+            "acceptedAnswer": { "@type": "Answer", "text": "By the cumulative difference method of IRC:115 Eq 3, on SCI or D0. A section is split where the cumulative difference changes most, as long as both parts keep at least 1 km and 12 points and their means really differ. You can also set breaks by hand, use one section per lane or group, or analyse point by point." } },
+          { "@type": "Question", "name": "Which FWD data formats can it import?",
+            "acceptedAnswer": { "@type": "Answer", "text": "KUAB .fwd files and a table pasted from Excel (group, chainage, load, deflections D1 to Dn, pavement and air temperature). KGPBACK backcalculation output can be imported too." } },
+          { "@type": "Question", "name": "Has DeflectPress been checked against the code?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, against the IRC:115 Appendix IV worked example. The temperature and seasonal corrections and the 15th percentile moduli match exactly. Under the wheel centre the strains match the code: 284.4 vs 284.5 microstrain for the existing pavement, and 159.8 vs 159.8 microstrain with the 95 mm overlay. The layered-elastic solver matches IITPAVE to 0.2%." } },
+          { "@type": "Question", "name": "What does DeflectPress not cover?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('apppress-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="App Press Store home">
+      <span class="logo raised" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="14" rx="3.5"/><path d="M16 22v4M11 27h10"/></svg>
+      </span>
+      <span class="brand-name">App Press <b>Store</b></span>
+    </a>
+    <div class="top-actions">
+      <a class="icon-btn" href="/#home" aria-label="Search all apps" title="Search all apps">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      </a>
+      <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="switch-label switch-off">Light</span>
+        <span class="switch-label switch-on">Dark</span>
+        <span class="switch-knob" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ OVERVIEW ============ -->
+    <section id="overview" class="section app-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">App Press Store</a><span aria-hidden="true">›</span><span>DeflectPress</span></nav>
+
+      <div class="hero">
+        <div>
+          <div class="app-top">
+            <img class="app-icon" src="/assets/deflectpress-icon.png" width="64" height="64" alt="DeflectPress FWD analysis software icon">
+            <p class="eyebrow inset-pill"><span class="dot"></span> Free · Windows · IRC:115-2014</p>
+          </div>
+          <h1>DeflectPress: <span class="amber-text">FWD analysis</span> for IRC:115 overlay design</h1>
+          <p class="lead">DeflectPress is free <b>FWD analysis</b> software for Windows that turns <b>falling weight deflectometer</b> data into a full IRC:115-2014 structural evaluation and overlay design for flexible pavements — on any road type: NH, SH, MDR or urban.</p>
+          <div class="cta-row">
+            <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Download for Windows <small>326 KB · .exe</small>
+            </a>
+            <a class="btn btn-soft" href="#features">See what it does</a>
+          </div>
+          <ul class="facts">
+            <li class="inset-pill">v1.0</li>
+            <li class="inset-pill">Single .exe · no install</li>
+            <li class="inset-pill">Light &amp; dark</li>
+          </ul>
+          <details class="hash">
+            <summary>Verify the download (SHA-256)</summary>
+            <code class="inset">93439A9896E69B839F141C90D90794A358C7F76BC95BD955907712CBE0611B60</code>
+            <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
+          </details>
+        </div>
+        <div class="shot-well inset hero-shot">
+          <img class="shot-light" src="/assets/deflectpress/fwd-backcalculation-layer-moduli.webp" width="1200" height="767" alt="FWD back calculation of layer moduli in DeflectPress, with fit percentage per test point">
+          <img class="shot-dark" src="/assets/deflectpress/fwd-backcalculation-dark.webp" width="1200" height="767" alt="FWD back calculation of layer moduli in DeflectPress, dark theme">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="kicker">Features</p>
+        <h2>Falling weight deflectometer analysis, start to finish</h2>
+        <p class="section-lead">Every step of the IRC:115-2014 pavement structural evaluation in one app, with the clause or equation shown next to each result.</p>
+      </div>
+
+      <div class="feature-rows">
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Import FWD data and check every deflection basin</h3>
+            <ul class="features">
+              <li>KUAB <code>.fwd</code> files, or a table pasted from Excel</li>
+              <li>Checks that the deflection basin falls with distance, load is 40 ± 4 kN, sensor capacity, at least 10 µm at 1.2 m, and pavement temperature ≤ 45 °C</li>
+              <li>Deflections normalised to 40 kN; excluded points keep their reason, measured bowls are never edited</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/fwd-data-import-normalised-deflection.webp" width="1200" height="767" loading="lazy" alt="Falling weight deflectometer data import with deflection basin checks and normalised deflection"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Homogeneous sections by cumulative difference</h3>
+            <ul class="features">
+              <li>IRC:115 Eq 3 on SCI or D0, with automatic splits that keep at least 1 km and 12 points</li>
+              <li>Or set breaks by hand, one section per lane or group, or point-wise analysis</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/homogeneous-sections-cumulative-difference.webp" width="1200" height="767" loading="lazy" alt="Homogeneous sections found by the cumulative difference method in DeflectPress"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>FWD back calculation of layer moduli</h3>
+            <ul class="features">
+              <li>Three-layer backcalculation with KGPBACK's objective: grid search, then Levenberg–Marquardt</li>
+              <li>Modulus ranges from Appendix III, including Eq III.2 for the subgrade per point</li>
+              <li>Fit % per point and range-limit flags; KGPBACK output can be imported</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/pavement-layers-backcalculation-ranges.webp" width="1200" height="767" loading="lazy" alt="Pavement layers and backcalculation modulus ranges from IRC:115 Appendix III"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Temperature and seasonal correction</h3>
+            <ul class="features">
+              <li>Bituminous modulus corrected to 35 °C (Eq 4–5)</li>
+              <li>Seasonal correction: winter Eq 6 / Eq 9, summer Eq 7 / Eq 8</li>
+              <li>15th percentile design moduli for each homogeneous section</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/temperature-seasonal-correction.webp" width="1200" height="767" loading="lazy" alt="Temperature correction to 35 °C and seasonal correction of backcalculated moduli"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Remaining life and IRC 115 overlay design</h3>
+            <ul class="features">
+              <li>Design traffic entered in msa, or calculated (Eq 10–11)</li>
+              <li>Remaining life by Eq 16/17 under the standard dual wheel</li>
+              <li>Bituminous overlay solved for the full design traffic, with balance traffic as an option</li>
+              <li>Auto overlay material: VG40 at 3000 MPa for NH / expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 / 9.2)</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/remaining-life-overlay-design.webp" width="1200" height="767" loading="lazy" alt="Remaining life and IRC 115 overlay design per homogeneous section"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>IRC checks and ready-to-submit reports</h3>
+            <ul class="features">
+              <li>PDF / HTML FWD study report: chapters, charts, summary of overlay sections, IRC checks and annexures</li>
+              <li>Excel workbook with live formulas, plus CSV</li>
+              <li>Optional client and consultant logos on the reports</li>
+              <li>Two built-in samples: NH-XX (synthetic) and NH-XY (a real two-lane survey, anonymised)</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/irc115-checks-summary.webp" width="1200" height="767" loading="lazy" alt="IRC:115 checks summary for the FWD study"></div>
+        </article>
+      </div>
+
+      <div class="validation raised">
+        <h3>Validated against the IRC:115 Appendix IV example</h3>
+        <ul class="features">
+          <li>Temperature and seasonal corrections and the 15th percentile moduli: exact</li>
+          <li>Strains under the wheel centre: 284.4 vs 284.5 µε for the existing pavement; 159.8 vs 159.8 µε with the 95 mm overlay</li>
+          <li>Layered-elastic solver matches IITPAVE to 0.2%</li>
+        </ul>
+        <p class="note"><b>Engineering design aid.</b> Compare the results with distress data, test pits and cores (IRC:115 cl. 8.2). The engineer is responsible for the inputs and the adopted design.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>FWD analysis questions</h2>
+      </div>
+      <div class="faq">
+        <details class="raised">
+          <summary>How does DeflectPress do IRC:115 FWD analysis?</summary>
+          <p>It follows the IRC:115-2014 workflow step by step: import the falling weight deflectometer data, check it and normalise the deflections to 40 kN, divide the road into homogeneous sections, backcalculate the layer moduli, correct them for temperature and season, take the 15th percentile design moduli, then work out remaining life and the bituminous overlay. Each step shows the clause or equation it uses.</p>
+        </details>
+        <details class="raised">
+          <summary>How does FWD back calculation of layer moduli work?</summary>
+          <p>DeflectPress fits a three-layer system (bituminous, granular, subgrade) to each measured deflection basin. It uses the same objective as KGPBACK, the sum of squared relative deflection errors, with a grid search followed by Levenberg–Marquardt within the IRC:115 Appendix III modulus ranges, including Eq III.2 for the subgrade. Each point gets a fit percentage, and moduli that end on a range limit are flagged. KGPBACK output files can also be imported.</p>
+        </details>
+        <details class="raised">
+          <summary>How are the temperature and seasonal corrections applied?</summary>
+          <p>The bituminous modulus is corrected to 35 °C with IRC:115 Eq 4–5, except where the code says not to (bituminous layer under 40 mm, Poor sections, cold or high-altitude areas). Granular and subgrade moduli get the seasonal correction: winter Eq 6 and Eq 9, summer Eq 7 and Eq 8, and none for post-monsoon testing. Warnings appear when values are outside each equation's range.</p>
+        </details>
+        <details class="raised">
+          <summary>How is the IRC 115 overlay design worked out from FWD data?</summary>
+          <p>For each homogeneous section, DeflectPress uses the 15th percentile design moduli to find the remaining life by Eq 16/17 under the standard dual wheel. It then solves for the thinnest bituminous overlay that carries the full design traffic, as IRC:115 requires; balance traffic is available as an option. The overlay material is set automatically: VG40 at 3000 MPa for NH and expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 and 9.2).</p>
+        </details>
+        <details class="raised">
+          <summary>How does it find homogeneous sections?</summary>
+          <p>By the cumulative difference method of IRC:115 Eq 3, on SCI or D0. A section is split where the cumulative difference changes most, as long as both parts keep at least 1 km and 12 points and their means really differ. You can also set breaks by hand, use one section per lane or group, or analyse point by point.</p>
+        </details>
+        <details class="raised">
+          <summary>Which FWD data formats can it import?</summary>
+          <p>KUAB .fwd files and a table pasted from Excel (group, chainage, load, deflections D1 to Dn, pavement and air temperature). KGPBACK backcalculation output can be imported too.</p>
+        </details>
+        <details class="raised">
+          <summary>Has DeflectPress been checked against the code?</summary>
+          <p>Yes, against the IRC:115 Appendix IV worked example. The temperature and seasonal corrections and the 15th percentile moduli match exactly. Under the wheel centre the strains match the code: 284.4 vs 284.5 microstrain for the existing pavement, and 159.8 vs 159.8 microstrain with the 95 mm overlay. The layered-elastic solver matches IITPAVE to 0.2%.</p>
+        </details>
+        <details class="raised">
+          <summary>What does DeflectPress not cover?</summary>
+          <p>Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ INSTALL + RELATED ============ -->
+    <section id="install" class="section">
+      <div class="section-head">
+        <p class="kicker">Install</p>
+        <h2>Download &amp; run</h2>
+        <p class="section-lead">DeflectPress is a single .exe that uses the .NET Framework 4 built into Windows 10 and 11. There's no installer.</p>
+      </div>
+      <ol class="steps">
+        <li class="step raised"><span class="step-num inset">1</span><h3>Download</h3><p>Click <b>Download for Windows</b>. If your browser flags the new file, choose <b>Keep</b>.</p></li>
+        <li class="step raised"><span class="step-num inset">2</span><h3>Open it</h3><p>On <b>“Windows protected your PC”</b>, click <b>More info → Run anyway</b>.</p></li>
+        <li class="step raised"><span class="step-num inset">3</span><h3>Try a sample</h3><p>Press <b>Sample</b> to load NH-XX or NH-XY and see a full FWD study.</p></li>
+      </ol>
+      <p class="tip inset">Step-by-step help for Chrome, Edge and SmartScreen warnings: <a href="/#install">Download &amp; install guide</a>.</p>
+
+      <a class="related raised" href="/#pavepress">
+        <img class="app-icon" src="/assets/pavepress-icon.png" width="64" height="64" alt="">
+        <span>
+          <span class="kicker">Also from App Press Store</span>
+          <span class="tile-name">PavePress — IRC:37-2018 flexible pavement design</span>
+          <span class="tile-desc">Design new flexible pavements with built-in IITPAVE-style analysis, code checks and PDF/Excel submission reports.</span>
+        </span>
+        <span class="tile-go">View <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="/">App Press Store</a> · Free Windows apps, ready in one press</p>
+    <p class="muted">DeflectPress is an independent tool and is not affiliated with IRC.</p>
+  </footer>
+
+  <nav class="dock raised" aria-label="Sections">
+    <span class="dock-indicator inset" aria-hidden="true"></span>
+    <a class="dock-item is-active" href="#overview" data-section="overview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg>
+      <span>Overview</span>
+    </a>
+    <a class="dock-item" href="#features" data-section="features">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
+      <span>Features</span>
+    </a>
+    <a class="dock-fab" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe" aria-label="Download DeflectPress">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+    </a>
+    <a class="dock-item" href="#faq" data-section="faq">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4M12 16.5h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+    <a class="dock-item" href="#install" data-section="install">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10M9 12h10M9 18h10M5 6h.01M5 12h.01M5 18h.01"/></svg>
+      <span>Install</span>
+    </a>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>

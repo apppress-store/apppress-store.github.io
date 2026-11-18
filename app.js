@@ -23,6 +23,7 @@
 
   // ---------- floating dock: pressed indicator slides to the active section ----------
   var dock = document.querySelector('.dock');
+  if (dock) (function () {
   var indicator = dock.querySelector('.dock-indicator');
   var items = Array.prototype.slice.call(dock.querySelectorAll('.dock-item'));
 
@@ -55,9 +56,11 @@
   window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(function () { spy(); ticking = false; }); }
   }, { passive: true });
+  })();
 
-  // ---------- app search ----------
+  // ---------- app search (home page only) ----------
   var form = document.getElementById('searchForm');
+  if (form) (function () {
   var input = document.getElementById('appSearch');
   var searchBtn = document.getElementById('searchBtn');
   var countPill = document.getElementById('appCount');
@@ -110,6 +113,7 @@
     var tag = (e.target.tagName || '').toLowerCase();
     if (e.key === '/' && tag !== 'input' && tag !== 'textarea' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openSearch(); }
   });
+  })();
 
   // ---------- each app card: tabs swap its screenshot and caption ----------
   // screenshots live at assets/<data-shot-prefix><data-shot>-light|dark.webp

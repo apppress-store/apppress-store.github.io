@@ -401,3 +401,39 @@ kbd {
 .faq-compact summary { font-size: 15px; }
 @media (max-width: 960px) { .faq-compact { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .top-actions { gap: 10px; } .search input { font-size: 15px; } }
+
+/* ================= app pages (/deflectpress/ …) ================= */
+.app-page { padding-top: 28px; }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 26px; }
+.crumbs a { color: var(--amber-ink); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.app-page .hero { padding-top: 0; gap: 48px; }
+.app-page .hero h1 { font-size: clamp(32px, 4.4vw, 50px); line-height: 1.08; margin: 24px 0 16px; }
+.app-page .app-top { gap: 16px; flex-wrap: wrap; }
+.app-page .lead { max-width: 560px; }
+.app-page .facts { margin-top: 24px; }
+.feature-rows { display: grid; gap: 32px; }
+.feature-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 32px; align-items: center; padding: 28px; border-radius: 28px; }
+.feature-row:nth-child(even) .feature-text { order: 2; }
+.feature-row h3 { font-size: 22px; font-weight: 800; line-height: 1.25; margin-bottom: 18px; }
+.feature-row .features { margin: 0; }
+.validation { margin-top: 32px; padding: 28px; border-radius: 28px; }
+.validation h3 { font-size: 22px; font-weight: 800; margin-bottom: 18px; }
+.tip a, .footer a { color: var(--amber-ink); font-weight: 700; }
+.footer a { text-decoration: none; }
+.related { display: flex; align-items: center; gap: 22px; margin-top: 34px; padding: 24px 26px; border-radius: 26px; text-decoration: none; color: inherit; transition: transform .25s, box-shadow .25s; }
+.related:hover { transform: translateY(-2px); }
+.related:active { box-shadow: var(--press); transform: none; }
+.related > span:nth-child(2) { flex: 1; display: grid; gap: 4px; }
+.related .kicker { margin: 0; }
+.related .tile-go { margin: 0; padding: 0; flex: none; }
+.cross-link { margin: 14px 0 0; font-size: 14px; }
+.cross-link a { color: var(--amber-ink); font-weight: 700; }
+@media (max-width: 960px) {
+  .feature-row { grid-template-columns: 1fr; }
+  .feature-row:nth-child(even) .feature-text { order: 0; }
+}
+@media (max-width: 560px) {
+  .feature-row, .validation { padding: 20px; }
+  .related { flex-wrap: wrap; padding: 20px; }
+}
