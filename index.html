@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>App Press Store — Free Windows Apps · Dual Wallpaper for Multiple Monitors</title>
-  <meta name="description" content="Free, tiny apps for Windows 10 and 11. Dual Wallpaper sets a different wallpaper on each monitor, the same image on all screens, or one picture spanned across dual monitors. No ads, no install.">
-  <meta name="keywords" content="dual monitor wallpaper, different wallpaper each monitor, multi monitor wallpaper Windows 11, span wallpaper across monitors, free Windows apps, App Press Store">
+  <title>App Press Store — Free Windows Apps · Dual Wallpaper · PavePress IRC:37 Pavement Design</title>
+  <meta name="description" content="Free, tiny apps for Windows 10 and 11. Dual Wallpaper sets a different wallpaper on each monitor or spans one across. PavePress does IRC:37-2018 flexible pavement design with built-in IITPAVE-style analysis. No ads, no install.">
+  <meta name="keywords" content="dual monitor wallpaper, different wallpaper each monitor, multi monitor wallpaper Windows 11, IRC 37 2018 pavement design software, flexible pavement design, IITPAVE alternative, free Windows apps, App Press Store">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://apppress-store.github.io/">
   <meta name="google-site-verification" content="qcU9-oYp5trq-fBjLJkO1KfHNBGg2GZGqHSOTrv8pv0">
@@ -56,6 +56,24 @@
         "downloadUrl": "https://apppress-store.github.io/downloads/DualWallpaperSoft.exe",
         "image": "https://apppress-store.github.io/assets/og-image.png",
         "screenshot": "https://apppress-store.github.io/assets/per-light.webp",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://apppress-store.github.io/#website" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://apppress-store.github.io/#pavepress",
+        "name": "PavePress",
+        "url": "https://apppress-store.github.io/#pavepress",
+        "description": "IRC:37-2018 flexible pavement design for Windows with a built-in IITPAVE-style multilayer elastic solver, code checks with clause references, and PDF/Excel submission reports. An engineering design aid; designs must be verified by a qualified engineer.",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Civil engineering design",
+        "operatingSystem": "Windows 10, Windows 11",
+        "softwareVersion": "1.0",
+        "fileSize": "323KB",
+        "downloadUrl": "https://apppress-store.github.io/downloads/PavePress.exe",
+        "image": "https://apppress-store.github.io/assets/pavepress-icon.png",
+        "screenshot": "https://apppress-store.github.io/assets/pave-layers-light.webp",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "publisher": { "@id": "https://apppress-store.github.io/#website" }
@@ -111,12 +129,12 @@
       <!-- apps list -->
       <div class="shelf-head">
         <h2 class="shelf-title">Apps</h2>
-        <span class="inset-pill" id="appCount" aria-live="polite">1 app · more coming</span>
+        <span class="inset-pill" id="appCount" aria-live="polite">2 apps · more coming</span>
       </div>
       <form class="search inset" id="searchForm" role="search" autocomplete="off">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
         <label class="sr-only" for="appSearch">Search apps</label>
-        <input id="appSearch" type="search" placeholder="Search apps — try “wallpaper” or “monitor”" enterkeyhint="search">
+        <input id="appSearch" type="search" placeholder="Search apps — try “wallpaper” or “pavement”" enterkeyhint="search">
         <kbd class="search-key" aria-hidden="true">/</kbd>
       </form>
       <div class="shelf" id="shelf">
@@ -130,6 +148,19 @@
           <span class="tile-name">Dual Wallpaper</span>
           <span class="tile-desc">A different wallpaper on every monitor, the same on all, or one image spanned across.</span>
           <span class="tile-meta">Windows 10 &amp; 11 · 64 KB · Light &amp; dark</span>
+          <span class="tile-go">View details
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+          </span>
+        </a>
+        <a class="app-tile raised" href="#pavepress" aria-label="PavePress: see details"
+           data-search="pavepress pavement design road highway flexible bituminous irc irc37 irc:37 2018 iitpave msa cbr subgrade traffic cvpd vdf ldf ctb ctsb sami rap wmm gsb dbm bc civil engineering excel pdf report">
+          <span class="tile-top">
+            <img class="app-icon" src="assets/pavepress-icon.png" width="64" height="64" alt="">
+            <span class="version inset-pill">v1.0</span>
+          </span>
+          <span class="tile-name">PavePress</span>
+          <span class="tile-desc">IRC:37-2018 flexible pavement design with built-in IITPAVE-style analysis.</span>
+          <span class="tile-meta">Windows 10 &amp; 11 · 323 KB · Light &amp; dark</span>
           <span class="tile-go">View details
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
           </span>
@@ -192,20 +223,20 @@
           <span class="version inset-pill">v1.0</span>
         </div>
 
-        <div class="modes" role="tablist" aria-label="App modes">
-          <button class="mode is-active" role="tab" aria-selected="true" data-shot="per">Per display</button>
-          <button class="mode" role="tab" aria-selected="false" data-shot="same">Same on all</button>
-          <button class="mode" role="tab" aria-selected="false" data-shot="span">Span across</button>
+        <div class="modes" role="tablist" aria-label="Dual Wallpaper modes">
+          <button class="mode is-active" role="tab" aria-selected="true" data-shot="per" data-caption="Pick a different image for each screen. Left and right are detected from how your monitors are arranged.">Per display</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="same" data-caption="One image, every screen. Choose Wallpaper A once and it lands on monitor 1 and monitor 2.">Same on all</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="span" data-caption="One picture stretched across all displays as a single wide scene — best with ultra-wide images.">Span across</button>
         </div>
 
         <div class="app-body">
-          <div class="shot-well inset app-shot" id="modeShot">
+          <div class="shot-well inset app-shot">
             <img class="shot-light" src="assets/per-light.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode, light theme">
             <img class="shot-dark" src="assets/per-dark.webp" width="1100" height="797" alt="Dual Wallpaper in per-display mode, dark theme">
           </div>
 
           <div class="app-side">
-            <p class="mode-caption" id="modeCaption">Pick a different image for each screen. Left and right are detected from how your monitors are arranged.</p>
+            <p class="mode-caption">Pick a different image for each screen. Left and right are detected from how your monitors are arranged.</p>
             <ul class="features">
               <li>Three modes: per display, same on all, span across</li>
               <li>Fill, Fit, Stretch, Tile or Center</li>
@@ -242,6 +273,77 @@
             <details class="raised">
               <summary>What happens to my wallpapers if I delete the app?</summary>
               <p>They stay exactly as they are — the app only changes Windows' wallpaper setting when you press <b>Apply wallpapers</b>.</p>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <article id="pavepress" class="app-card raised" data-shot-prefix="pave-">
+        <div class="app-top">
+          <img class="app-icon" src="assets/pavepress-icon.png" width="64" height="64" alt="">
+          <div class="app-title">
+            <h3>PavePress</h3>
+            <p>IRC:37-2018 flexible pavement design with built-in IITPAVE-style analysis.</p>
+          </div>
+          <span class="version inset-pill">v1.0</span>
+        </div>
+
+        <div class="modes" role="tablist" aria-label="PavePress pages">
+          <button class="mode is-active" role="tab" aria-selected="true" data-shot="layers" data-caption="Pick one of the six IRC pavement types or build a custom stack. Auto crust finds the minimum safe section, drawn with its critical strains and the carriageway plan.">Pavement layers</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="traffic" data-caption="Classwise CVPD pasted straight from Excel, growth to the year of completion, LDF and VDF, and design MSA worked out step by step.">Traffic</button>
+          <button class="mode" role="tab" aria-selected="false" data-shot="results" data-caption="Every code check with its IRC:37-2018 clause: OK, CHECK or FAIL, plus bituminous fatigue and subgrade rutting utilisation.">Results &amp; checks</button>
+        </div>
+
+        <div class="app-body">
+          <div class="shot-well inset app-shot">
+            <img class="shot-light" src="assets/pave-layers-light.webp" width="1200" height="767" loading="lazy" alt="PavePress pavement layers page with a granular pavement section, light theme">
+            <img class="shot-dark" src="assets/pave-layers-dark.webp" width="1200" height="767" loading="lazy" alt="PavePress pavement layers page with a CTSB, CTB and SAMI section, dark theme">
+          </div>
+
+          <div class="app-side">
+            <p class="mode-caption">Pick one of the six IRC pavement types or build a custom stack. Auto crust finds the minimum safe section, drawn with its critical strains and the carriageway plan.</p>
+            <ul class="features">
+              <li><b>Traffic:</b> classwise CVPD with Excel paste, growth, LDF, VDF (Table 4.2 or axle survey), design MSA, stage construction</li>
+              <li><b>Subgrade:</b> adopted CBR or 90th/80th percentile of tests, effective CBR for a weaker embankment, MR with the 100 MPa cap</li>
+              <li>All six IRC pavement types, plus a custom layer stack</li>
+              <li>Built-in multilayer elastic solver, checked against IRC:37 Annex III and II.4 (within about 0.3%) — no separate IITPAVE run</li>
+              <li>Bituminous fatigue, subgrade rutting, CTB fatigue (Eq. 3.5) and cumulative fatigue damage</li>
+              <li>Auto minimum-safe crust, auto VG30/VG40 binder (Table 9.1), code checks with clause references</li>
+              <li>Submission-format PDF and Excel (live formulas), HTML report, CSV; save and open .pave projects</li>
+            </ul>
+            <a class="btn btn-amber btn-wide" href="downloads/PavePress.exe" download="PavePress.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Download for Windows
+              <small>323 KB · .exe</small>
+            </a>
+            <p class="after-dl">Browser or Windows warning? <a href="#install">Here's what to click</a>.</p>
+            <details class="hash">
+              <summary>Verify the download (SHA-256)</summary>
+              <code class="inset">E030E1913C246BE70D54683C7C3E83A3880629AA957B5CC0F0B4E5213E5940C3</code>
+              <p>In PowerShell: <code>Get-FileHash "PavePress.exe"</code></p>
+            </details>
+            <p class="note"><b>Engineering design aid.</b> PavePress helps prepare a design; a qualified engineer must check the inputs and results and sign off the design.</p>
+          </div>
+        </div>
+
+        <div class="app-faq">
+          <h4 class="app-faq-title">Good to know</h4>
+          <div class="faq faq-compact">
+            <details class="raised">
+              <summary>Do I still need IITPAVE?</summary>
+              <p>No. PavePress has its own multilayer elastic solver. It was checked against the IRC:37-2018 Annex III examples (all six pavement types at CBR 10%) and Annex II.4, and agrees within about 0.3%.</p>
+            </details>
+            <details class="raised">
+              <summary>Are the IRC catalogue plates included?</summary>
+              <p>No. The IRC:37-2018 plates are IRC copyright, so they aren't part of the download. PavePress draws its own composition chart instead. If you own the code book, you can add your own plate images with <b>Open catalogue plates folder</b>.</p>
+            </details>
+            <details class="raised">
+              <summary>What does PDF export need?</summary>
+              <p>Microsoft Edge, which is built into Windows 10 and 11 (Chrome also works). Edge prints the PDF in the background; if neither browser is found, the HTML report opens so you can print it with <kbd>Ctrl</kbd> + <kbd>P</kbd>.</p>
+            </details>
+            <details class="raised">
+              <summary>Is PavePress affiliated with IRC?</summary>
+              <p>No. It's an independent tool that follows the published IRC:37-2018 method. Always check the design against the current code and any project-specific requirements.</p>
             </details>
           </div>
         </div>
@@ -384,7 +486,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
       <span>Apps</span>
     </a>
-    <a class="dock-fab" href="downloads/DualWallpaperSoft.exe" download="Dual Wallpaper Soft.exe" aria-label="Download Dual Wallpaper">
+    <a class="dock-fab" href="#shelf" aria-label="Browse apps to download">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
     </a>
     <a class="dock-item" href="#install" data-section="install">

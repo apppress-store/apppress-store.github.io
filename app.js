@@ -111,34 +111,41 @@
     if (e.key === '/' && tag !== 'input' && tag !== 'textarea' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); openSearch(); }
   });
 
-  // ---------- app mode tabs swap the screenshot ----------
-  var captions = {
-    per:  'Pick a different image for each screen. Left and right are detected from how your monitors are arranged.',
-    same: 'One image, every screen. Choose Wallpaper A once and it lands on monitor 1 and monitor 2.',
-    span: 'One picture stretched across all displays as a single wide scene — best with ultra-wide images.'
-  };
-  var shot = document.getElementById('modeShot');
-  var caption = document.getElementById('modeCaption');
-  var modes = Array.prototype.slice.call(document.querySelectorAll('.mode'));
-  var imgs = shot.querySelectorAll('img');
-  // preload
-  ['per', 'same', 'span'].forEach(function (m) { ['light', 'dark'].forEach(function (t) { new Image().src = 'assets/' + m + '-' + t + '.webp'; }); });
+  // ---------- each app card: tabs swap its screenshot and caption ----------
+  // screenshots live at assets/<data-shot-prefix><data-shot>-light|dark.webp
+  Array.prototype.forEach.call(document.querySelectorAll('.app-card'), function (card) {
+    var shot = card.querySelector('.app-shot');
+    var caption = card.querySelector('.mode-caption');
+    var modes = Array.prototype.slice.call(card.querySelectorAll('.mode'));
+    if (!shot || !modes.length) return;
+    var imgs = shot.querySelectorAll('img');
+    var prefix = 'assets/' + (card.getAttribute('data-shot-prefix') || '');
+    var preloaded = false;
 
-  modes.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var m = btn.getAttribute('data-shot');
-      modes.forEach(function (b) {
-        var on = b === btn;
-        b.classList.toggle('is-active', on);
-        b.setAttribute('aria-selected', on ? 'true' : 'false');
+    modes.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (!preloaded) {
+          preloaded = true;
+          modes.forEach(function (b) { ['light', 'dark'].forEach(function (t) { new Image().src = prefix + b.getAttribute('data-shot') + '-' + t + '.webp'; }); });
+        }
+        var m = btn.getAttribute('data-shot');
+        modes.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        shot.classList.add('is-swapping');
+        setTimeout(function () {
+          imgs[0].src = prefix + m + '-light.webp';
+          imgs[1].src = prefix + m + '-dark.webp';
+          if (caption) caption.textContent = btn.getAttribute('data-caption') || '';
+          shot.classList.remove('is-swapping');
+        }, 180);
       });
-      shot.classList.add('is-swapping');
-      setTimeout(function () {
-        imgs[0].src = 'assets/' + m + '-light.webp';
-        imgs[1].src = 'assets/' + m + '-dark.webp';
-        caption.textContent = captions[m];
-        shot.classList.remove('is-swapping');
-      }, 180);
+      // warm the cache when the visitor shows interest
+      btn.addEventListener('pointerenter', function () {
+        ['light', 'dark'].forEach(function (t) { new Image().src = prefix + btn.getAttribute('data-shot') + '-' + t + '.webp'; });
+      }, { once: true });
     });
   });
 })();
