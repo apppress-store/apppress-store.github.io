@@ -437,3 +437,5 @@ kbd {
   .feature-row, .validation { padding: 20px; }
   .related { flex-wrap: wrap; padding: 20px; }
 }
+.related + .related { margin-top: 20px; }
+.feature-text a { color: var(--amber-ink); font-weight: 700; }
