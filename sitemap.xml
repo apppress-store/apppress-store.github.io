@@ -43,4 +43,19 @@
     <image:image><image:loc>https://apppress-store.github.io/assets/traffic-analysis/tvc-analysis-adt-aadt-peak-hour.webp</image:loc></image:image>
     <image:image><image:loc>https://apppress-store.github.io/assets/traffic-analysis/vehicle-classes-pcu-factors-irc.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://apppress-store.github.io/score-the-alignments/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/score-the-alignments-alignment-option-study.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/alternatives-and-aspect-weights.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/alignment-evaluation-matrix-irc-sp19-appendix-8.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/how-the-scoring-rules-work.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/alignment-ranking-and-sensitivity.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/optional-land-acquisition-rfctlarr.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/optional-structures-trees-rr.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/optional-pre-construction-and-civil-cost.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/score-the-alignments/optional-geometric-design-checks.webp</image:loc></image:image>
+  </url>
 </urlset>
