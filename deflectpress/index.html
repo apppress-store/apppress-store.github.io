@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.1",
-        "fileSize": "337KB",
+        "softwareVersion": "1.2",
+        "fileSize": "341KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -72,6 +72,8 @@
             "acceptedAnswer": { "@type": "Answer", "text": "DeflectPress fits a three-layer system (bituminous, granular, subgrade) to each measured deflection basin. It uses the same objective as KGPBACK, the sum of squared relative deflection errors, with a grid search followed by Levenberg–Marquardt within the IRC:115 Appendix III modulus ranges, including Eq III.2 for the subgrade. Each point gets a fit percentage, and moduli that end on a range limit are flagged. KGPBACK output files can also be imported." } },
           { "@type": "Question", "name": "How are the temperature and seasonal corrections applied?",
             "acceptedAnswer": { "@type": "Answer", "text": "The bituminous modulus is corrected to 35 °C with IRC:115 Eq 4–5, except where the code says not to (bituminous layer under 40 mm, Poor sections, cold or high-altitude areas). Granular and subgrade moduli get the seasonal correction: winter Eq 6 and Eq 9, summer Eq 7 and Eq 8, and none for post-monsoon testing. Warnings appear when values are outside each equation's range." } },
+          { "@type": "Question", "name": "Can DeflectPress pick the seasonal correction from the FWD testing month?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. On the Corrections page, choose the testing month and the monsoon type: south-west (Jun–Sep, most of India) or north-east (Oct–Dec, the south-east coast). DeflectPress then picks the IRC:115 cl. 6.5 season. By default, with the south-west monsoon, Jun–Nov gets no correction, Dec–Feb is winter (Eq 6 / Eq 9) and Mar–May is summer (Eq 7 / Eq 8); with the north-east monsoon, Oct–Feb gets no correction and Mar–Sep is summer. This month-to-season mapping is the app’s default, not an IRC table: you can still change the season by hand, and Results & Checks warns if it differs from what the month suggests. The report and Excel output show the testing month." } },
           { "@type": "Question", "name": "How is the IRC 115 overlay design worked out from FWD data?",
             "acceptedAnswer": { "@type": "Answer", "text": "For each homogeneous section, DeflectPress uses the 15th percentile design moduli to find the remaining life by Eq 16/17 under the standard dual wheel. It then solves for the thinnest bituminous overlay that carries the full design traffic, as IRC:115 requires; balance traffic is available as an option. The overlay material is set automatically: VG40 at 3000 MPa for NH and expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 and 9.2)." } },
           { "@type": "Question", "name": "How does it find homogeneous sections?",
@@ -139,18 +141,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>337 KB · .exe</small>
+              Download for Windows <small>341 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.1</li>
+            <li class="inset-pill">v1.2</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">E971771E26E5F827E04C33B7363E9DBE95274DCAB03FBFF27EE1A07D13D1EB88</code>
+            <code class="inset">9FC73B153A03F0111EC4DCE115F5A5EFAD34A290A655A2A7DD555FAE1CE95163</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -212,6 +214,7 @@
             <ul class="features">
               <li>Bituminous modulus corrected to 35 °C (Eq 4–5)</li>
               <li>Seasonal correction: winter Eq 6 / Eq 9, summer Eq 7 / Eq 8</li>
+              <li><b>New in v1.2:</b> enter the <b>testing month</b> and <b>monsoon type</b> (south-west or north-east) and the cl. 6.5 season is picked for you; you can still change it, and a warning shows if it differs from the month</li>
               <li>15th percentile design moduli for each homogeneous section</li>
             </ul>
           </div>
@@ -274,6 +277,10 @@
         <details class="raised">
           <summary>How are the temperature and seasonal corrections applied?</summary>
           <p>The bituminous modulus is corrected to 35 °C with IRC:115 Eq 4–5, except where the code says not to (bituminous layer under 40 mm, Poor sections, cold or high-altitude areas). Granular and subgrade moduli get the seasonal correction: winter Eq 6 and Eq 9, summer Eq 7 and Eq 8, and none for post-monsoon testing. Warnings appear when values are outside each equation's range.</p>
+        </details>
+        <details class="raised">
+          <summary>Can DeflectPress pick the seasonal correction from the FWD testing month?</summary>
+          <p>Yes. On the Corrections page, choose the testing month and the monsoon type: south-west (Jun–Sep, most of India) or north-east (Oct–Dec, the south-east coast). DeflectPress then picks the IRC:115 cl. 6.5 season. By default, with the south-west monsoon, Jun–Nov gets no correction, Dec–Feb is winter (Eq 6 / Eq 9) and Mar–May is summer (Eq 7 / Eq 8); with the north-east monsoon, Oct–Feb gets no correction and Mar–Sep is summer. This month-to-season mapping is the app’s default, not an IRC table: you can still change the season by hand, and Results &amp; Checks warns if it differs from what the month suggests. The report and Excel output show the testing month.</p>
         </details>
         <details class="raised">
           <summary>How is the IRC 115 overlay design worked out from FWD data?</summary>
