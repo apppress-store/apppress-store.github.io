@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.0",
-        "fileSize": "326KB",
+        "softwareVersion": "1.1",
+        "fileSize": "336KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -76,6 +76,8 @@
             "acceptedAnswer": { "@type": "Answer", "text": "For each homogeneous section, DeflectPress uses the 15th percentile design moduli to find the remaining life by Eq 16/17 under the standard dual wheel. It then solves for the thinnest bituminous overlay that carries the full design traffic, as IRC:115 requires; balance traffic is available as an option. The overlay material is set automatically: VG40 at 3000 MPa for NH and expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 and 9.2)." } },
           { "@type": "Question", "name": "How does it find homogeneous sections?",
             "acceptedAnswer": { "@type": "Answer", "text": "By the cumulative difference method of IRC:115 Eq 3, on SCI or D0. A section is split where the cumulative difference changes most, as long as both parts keep at least 1 km and 12 points and their means really differ. You can also set breaks by hand, use one section per lane or group, or analyse point by point." } },
+          { "@type": "Question", "name": "Can I leave out a reconstruction reach from the FWD overlay design?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter it as a skip reach on the Sections page, for example 2.3-2.6 or 2+300 to 2+600. The test points at its two ends go to the sections outside it, points inside are not used (the reason is shown), and no overlay is designed for that reach. It is listed as “Skip reach” in the sections table and in Table 9.1, with a note to design it separately as new pavement to IRC:37. Manual section breaks also cut exactly at the chainages you type; a point on a break stays in the section before it." } },
           { "@type": "Question", "name": "Which FWD data formats can it import?",
             "acceptedAnswer": { "@type": "Answer", "text": "KUAB .fwd files and a table pasted from Excel (group, chainage, load, deflections D1 to Dn, pavement and air temperature). KGPBACK backcalculation output can be imported too." } },
           { "@type": "Question", "name": "Has DeflectPress been checked against the code?",
@@ -137,18 +139,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>326 KB · .exe</small>
+              Download for Windows <small>336 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.0</li>
+            <li class="inset-pill">v1.1</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">93439A9896E69B839F141C90D90794A358C7F76BC95BD955907712CBE0611B60</code>
+            <code class="inset">CCF4F5AC4FA8FBE63C83ADD169C7DAD04A39583E522A29FC7A59AEBC2F52C5AC</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -186,6 +188,7 @@
             <ul class="features">
               <li>IRC:115 Eq 3 on SCI or D0, with automatic splits that keep at least 1 km and 12 points</li>
               <li>Or set breaks by hand, one section per lane or group, or point-wise analysis</li>
+              <li><b>New in v1.1:</b> manual breaks cut exactly at the chainages you type, and a <b>skip reach</b> (e.g. 2.3-2.6) leaves out a reconstruction or no-FWD-design reach: its end points go to the sections outside it, points inside are not used, and it is listed as “Skip reach” in the sections table and Table 9.1</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/homogeneous-sections-cumulative-difference.webp" width="1200" height="767" loading="lazy" alt="Homogeneous sections found by the cumulative difference method in DeflectPress"></div>
@@ -279,6 +282,10 @@
         <details class="raised">
           <summary>How does it find homogeneous sections?</summary>
           <p>By the cumulative difference method of IRC:115 Eq 3, on SCI or D0. A section is split where the cumulative difference changes most, as long as both parts keep at least 1 km and 12 points and their means really differ. You can also set breaks by hand, use one section per lane or group, or analyse point by point.</p>
+        </details>
+        <details class="raised">
+          <summary>Can I leave out a reconstruction reach from the FWD overlay design?</summary>
+          <p>Yes. Enter it as a skip reach on the Sections page, for example 2.3-2.6 or 2+300 to 2+600. The test points at its two ends go to the sections outside it, points inside are not used (the reason is shown), and no overlay is designed for that reach. It is listed as “Skip reach” in the sections table and in Table 9.1, with a note to design it separately as new pavement to IRC:37. Manual section breaks also cut exactly at the chainages you type; a point on a break stays in the section before it.</p>
         </details>
         <details class="raised">
           <summary>Which FWD data formats can it import?</summary>
