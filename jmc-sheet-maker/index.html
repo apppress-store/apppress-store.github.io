@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JMC Sheet Maker – JMC Sketch DWG to True-Scale A3 PDF (1:1000)</title>
+  <meta name="description" content="Free Windows software for land acquisition JMC sketches: turns JMC sketch DWGs drawn in Model space into true-scale A3 sheets (1:500, 1:1000, 1:2000, or A2 / A1 / A0 when bigger) and one bookmarked PDF per village, with Nudi / Kannada text. Works with or without AutoCAD.">
+  <meta name="keywords" content="JMC sketch, joint measurement certificate, JMC sketch to PDF, land acquisition JMC sketch, DWG to PDF true scale, DWG to PDF 1:1000, A3 sheets from Model space, true scale PDF, bookmarked PDF per village, survey hissa order, Nudi fonts AutoCAD PDF, Kannada text AutoCAD PDF, ODA File Converter, AutoCAD Core Console, DWG to PDF without AutoCAD">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://apppress-store.github.io/jmc-sheet-maker/">
+  <meta name="theme-color" content="#ECEEF2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2A2D33" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="App Press Store">
+  <meta property="og:url" content="https://apppress-store.github.io/jmc-sheet-maker/">
+  <meta property="og:title" content="JMC Sheet Maker – JMC Sketch DWG to True-Scale A3 PDF (1:1000)">
+  <meta property="og:description" content="Free Windows tool: JMC sketch DWGs for land acquisition to true-scale A3 sheets and one bookmarked PDF per village, with or without AutoCAD.">
+  <meta property="og:image" content="https://apppress-store.github.io/assets/jmc-sheet-maker/og-jmc-sheet-maker.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="JMC Sheet Maker, Make sheets page">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JMC Sheet Maker – JMC Sketch DWG to True-Scale A3 PDF (1:1000)">
+  <meta name="twitter:description" content="Free Windows tool: JMC sketch DWGs to true-scale A3 sheets and one bookmarked PDF per village.">
+  <meta name="twitter:image" content="https://apppress-store.github.io/assets/jmc-sheet-maker/og-jmc-sheet-maker.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/jmc-sheet-maker-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://apppress-store.github.io/jmc-sheet-maker/#app",
+        "name": "JMC Sheet Maker",
+        "alternateName": ["JMC Sketch to PDF", "DWG to true-scale PDF for land acquisition"],
+        "url": "https://apppress-store.github.io/jmc-sheet-maker/",
+        "description": "Free Windows software that turns JMC sketch (joint measurement certificate) DWGs for land acquisition, drawn in Model space, into sheets that print at a true scale (1:500, 1:1000, 1:2000) on A3, or A2 / A1 / A0 when the sketch is bigger, plus one bookmarked PDF per village with pages in survey / hissa order. Nudi fonts and Kannada text print correctly. Works without AutoCAD (built-in renderer) or with AutoCAD Core Console; reads DWGs with ODA File Converter.",
+        "applicationCategory": "EngineeringApplication",
+        "applicationSubCategory": "Land acquisition drawings",
+        "operatingSystem": "Windows",
+        "softwareVersion": "1.0",
+        "fileSize": "51.5MB",
+        "downloadUrl": "https://apppress-store.github.io/downloads/JMC-Sheet-Maker.exe",
+        "image": "https://apppress-store.github.io/assets/jmc-sheet-maker-icon.png",
+        "screenshot": [
+          "https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-make-true-scale-sheets.webp",
+          "https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-setup-oda-nudi-fonts-autocad.webp",
+          "https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-sheet-list.webp",
+          "https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-how-to-draw-jmc-sketch.webp"
+        ],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "publisher": { "@type": "Organization", "name": "App Press Store", "url": "https://apppress-store.github.io/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "App Press Store", "item": "https://apppress-store.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "JMC Sheet Maker", "item": "https://apppress-store.github.io/jmc-sheet-maker/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://apppress-store.github.io/jmc-sheet-maker/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What do I need to install for JMC Sheet Maker?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Only two things: ODA File Converter (free, from opendesign.com) to read the DWGs, and the Nudi fonts installed for all users. Python 3.13, ezdxf and PyMuPDF are built into the exe and unpack on first start (about 3 seconds). AutoCAD is optional. The Setup page shows a status light for each item, with a button to fix it." } },
+          { "@type": "Question", "name": "Why does Kannada text print garbled in the PDF?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Usually the Nudi fonts are installed only for one Windows user, so AutoCAD and other programs cannot find them when they plot. On the Setup page, Install for all users copies the Nudi fonts into C:\\Windows\\Fonts with one administrator prompt, and the Kannada text then prints correctly." } },
+          { "@type": "Question", "name": "Do I need AutoCAD to make the JMC sketch PDFs?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. With full AutoCAD 2013 or newer, the PDFs are plotted by AutoCAD itself through its Core Console (no window opens), for the closest match to an AutoCAD print. Without AutoCAD, or with AutoCAD LT, the built-in renderer makes the PDFs at the same scale, with the same pages and bookmarks. The DWGs can be drawn in any CAD that saves AutoCAD .dwg files." } },
+          { "@type": "Question", "name": "What scale are the sheets made at?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Option D puts every sheet at 1:1000 on A3, choosing portrait or landscape per sheet so the hatched land-acquisition portion fits best. Option E uses one scale you type as metres per cm on paper (10 = 1:1000, 5 = 1:500, 20 = 1:2000) and picks A3, A2, A1 or A0 per sheet so the whole sketch fits. Old notes such as '1 Cm = 16 Mtr' are corrected to the real scale. Print the PDFs at Actual size / 100 %, never Fit to page." } },
+          { "@type": "Question", "name": "Are my DWG files changed?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Your DWGs are only read. The sheet DWGs, the PDFs and the sheet list are written into new 'Option X' folders next to them; if a folder already exists, a new one such as 'Option D (2)' is made, so nothing is overwritten." } },
+          { "@type": "Question", "name": "How must the JMC sketch sheets be drawn?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In Model space, in metres (survey coordinates). Each sheet needs a closed rectangle polyline as its border, a title inside it containing 'JMC Sketch' (the survey number is read from it), and the land-acquisition portion drawn as a hatch. A sheet without a closed rectangle border or a 'JMC Sketch' title is skipped, so compare the sheet count in the log. The How to draw page in the app lists every rule." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('apppress-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="App Press Store home">
+      <span class="logo raised" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="14" rx="3.5"/><path d="M16 22v4M11 27h10"/></svg>
+      </span>
+      <span class="brand-name">App Press <b>Store</b></span>
+    </a>
+    <div class="top-actions">
+      <a class="icon-btn" href="/#home" aria-label="Search all apps" title="Search all apps">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      </a>
+      <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="switch-label switch-off">Light</span>
+        <span class="switch-label switch-on">Dark</span>
+        <span class="switch-knob" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ OVERVIEW ============ -->
+    <section id="overview" class="section app-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">App Press Store</a><span aria-hidden="true">›</span><span>JMC Sheet Maker</span></nav>
+
+      <div class="hero">
+        <div>
+          <div class="app-top">
+            <img class="app-icon" src="/assets/jmc-sheet-maker-icon.png" width="64" height="64" alt="JMC Sheet Maker icon">
+            <p class="eyebrow inset-pill"><span class="dot"></span> Free · Windows · DWG to PDF</p>
+          </div>
+          <h1>JMC Sheet Maker: <span class="amber-text">JMC sketch DWG to PDF</span> at true scale for land acquisition</h1>
+          <p class="lead">JMC Sheet Maker is free Windows software that turns your <b>JMC sketch</b> (joint measurement certificate) DWGs for <b>land acquisition</b> into <b>DWG to PDF at true scale</b>: A3 sheets from Model space at 1:500, 1:1000 or 1:2000 (A2, A1 or A0 when the sketch is bigger), and one bookmarked PDF per village with the pages in survey / hissa order.</p>
+          <div class="cta-row">
+            <a class="btn btn-amber" href="/downloads/JMC-Sheet-Maker.exe" download="JMC-Sheet-Maker.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Download for Windows <small>51.5 MB · .exe</small>
+            </a>
+            <a class="btn btn-soft" href="#features">See what it does</a>
+          </div>
+          <ul class="facts">
+            <li class="inset-pill">v1.0</li>
+            <li class="inset-pill">Single .exe · no install</li>
+            <li class="inset-pill">Light &amp; dark</li>
+          </ul>
+          <details class="hash">
+            <summary>Verify the download (SHA-256)</summary>
+            <code class="inset">CFD9D56EA0224EFE6DD79C0A83CCC64160BF0E6D94434FCF9CBDCEBCF3C036AB</code>
+            <p>In PowerShell: <code>Get-FileHash "JMC-Sheet-Maker.exe"</code></p>
+          </details>
+        </div>
+        <div class="shot-well inset hero-shot">
+          <img class="shot-light" src="/assets/jmc-sheet-maker/jmc-sheet-maker-make-true-scale-sheets.webp" width="1200" height="800" alt="JMC Sheet Maker Make sheets page: DWG folder, options A to E, scale in metres per cm and PDFs with AutoCAD or the built-in renderer">
+          <img class="shot-dark" src="/assets/jmc-sheet-maker/jmc-sheet-maker-dark-mode.webp" width="1200" height="800" alt="JMC Sheet Maker Make sheets page in dark mode">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="kicker">Features</p>
+        <h2>From JMC sketch DWGs to print-ready, true-scale PDFs</h2>
+        <p class="section-lead">Point it at the folder of JMC sketch DWGs for a job, pick an option, and get sheet DWGs, one PDF per village and a sheet list, without touching your drawings.</p>
+      </div>
+
+      <div class="feature-rows">
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Make true-scale sheets from Model space</h3>
+            <ul class="features">
+              <li>One folder per job; about 1 minute per village per option</li>
+              <li>Option D: every sheet at 1:1000 on A3, portrait or landscape per sheet so the hatched LA portion fits</li>
+              <li>Option E: one scale you type as metres per cm (10 = 1:1000, 5 = 1:500, 20 = 1:2000), paper A3 / A2 / A1 / A0 per sheet</li>
+              <li>Options A, B and C: A3 paper-space layouts, border scaled in Model space, or all at 1:1000 with the view kept on the LA hatch</li>
+              <li>Old notes like “1 Cm = 16 Mtr” are corrected to the real scale</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/jmc-sheet-maker/jmc-sheet-maker-make-true-scale-sheets.webp" width="1200" height="800" loading="lazy" alt="Making true-scale A3 JMC sketch sheets at 1:1000 from Model space"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>One bookmarked PDF per village</h3>
+            <ul class="features">
+              <li>Pages in survey / hissa order (5/1, 5/2 … 70/10), bookmarked by survey number</li>
+              <li>Plotted by AutoCAD's Core Console (no window) with full AutoCAD 2013+, or by the built-in renderer without AutoCAD</li>
+              <li>Same scale, pages and bookmarks either way; print at Actual size / 100 %</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/jmc-sheet-maker/jmc-sheet-maker-dark-mode.webp" width="1200" height="800" loading="lazy" alt="Making one bookmarked PDF per village from JMC sketch DWGs, dark mode"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Sheet list that flags what to check</h3>
+            <ul class="features">
+              <li>Each output's CSV: village, survey number, named view, scale and paper</li>
+              <li>Sheets that were cropped, rotated or moved are flagged, so you check only those pages</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/jmc-sheet-maker/jmc-sheet-maker-sheet-list.webp" width="1200" height="800" loading="lazy" alt="Sheet list flagging cropped, rotated or moved JMC sheets"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Setup: ODA File Converter, Nudi fonts, AutoCAD</h3>
+            <ul class="features">
+              <li>Status lights for the built-in engine, ODA File Converter, Nudi fonts and AutoCAD, each with a fix button</li>
+              <li>Installs the Nudi fonts for all users with one admin prompt, so Kannada text prints correctly in the AutoCAD PDF</li>
+              <li>Python 3.13, ezdxf and PyMuPDF built in; nothing else to install</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/jmc-sheet-maker/jmc-sheet-maker-setup-oda-nudi-fonts-autocad.webp" width="1200" height="800" loading="lazy" alt="Setup page checking ODA File Converter, Nudi fonts for Kannada text and AutoCAD"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>How to draw the JMC sketch</h3>
+            <ul class="features">
+              <li>Model space, in metres; each sheet a closed rectangle border with a “… JMC Sketch” title</li>
+              <li>The land-acquisition portion drawn as a hatch; the JMC table inside the border</li>
+              <li>The app's How to draw page also explains doing one sheet by hand and troubleshooting</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/jmc-sheet-maker/jmc-sheet-maker-how-to-draw-jmc-sketch.webp" width="1200" height="800" loading="lazy" alt="How to draw JMC sketch sheets so they are found: border, title, LA hatch and options table"></div>
+        </article>
+      </div>
+
+      <div class="validation raised">
+        <h3>Tested on a real 30-sheet village</h3>
+        <ul class="features">
+          <li>Option D with the built-in renderer (no AutoCAD): all pages made</li>
+          <li>Option E at 1:1000 with AutoCAD 2022: 22 A3 and 8 A2 sheets, Kannada text correct</li>
+        </ul>
+        <p class="note"><b>Your drawings are never changed.</b> Results go into new “Option X” folders. Check the flagged sheets before printing.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>JMC sketch to PDF questions</h2>
+      </div>
+      <div class="faq">
+        <details class="raised">
+          <summary>What do I need to install for JMC Sheet Maker?</summary>
+          <p>Only two things: ODA File Converter (free, from opendesign.com) to read the DWGs, and the Nudi fonts installed for all users. Python 3.13, ezdxf and PyMuPDF are built into the exe and unpack on first start (about 3 seconds). AutoCAD is optional. The Setup page shows a status light for each item, with a button to fix it.</p>
+        </details>
+        <details class="raised">
+          <summary>Why does Kannada text print garbled in the PDF?</summary>
+          <p>Usually the Nudi fonts are installed only for one Windows user, so AutoCAD and other programs cannot find them when they plot. On the Setup page, <b>Install for all users</b> copies the Nudi fonts into C:\Windows\Fonts with one administrator prompt, and the Kannada text then prints correctly.</p>
+        </details>
+        <details class="raised">
+          <summary>Do I need AutoCAD to make the JMC sketch PDFs?</summary>
+          <p>No. With full AutoCAD 2013 or newer, the PDFs are plotted by AutoCAD itself through its Core Console (no window opens), for the closest match to an AutoCAD print. Without AutoCAD, or with AutoCAD LT, the built-in renderer makes the PDFs at the same scale, with the same pages and bookmarks. The DWGs can be drawn in any CAD that saves AutoCAD .dwg files.</p>
+        </details>
+        <details class="raised">
+          <summary>What scale are the sheets made at?</summary>
+          <p>Option D puts every sheet at 1:1000 on A3, choosing portrait or landscape per sheet so the hatched land-acquisition portion fits best. Option E uses one scale you type as metres per cm on paper (10 = 1:1000, 5 = 1:500, 20 = 1:2000) and picks A3, A2, A1 or A0 per sheet so the whole sketch fits. Old notes such as “1 Cm = 16 Mtr” are corrected to the real scale. Print the PDFs at Actual size / 100 %, never Fit to page.</p>
+        </details>
+        <details class="raised">
+          <summary>Are my DWG files changed?</summary>
+          <p>No. Your DWGs are only read. The sheet DWGs, the PDFs and the sheet list are written into new “Option X” folders next to them; if a folder already exists, a new one such as “Option D (2)” is made, so nothing is overwritten.</p>
+        </details>
+        <details class="raised">
+          <summary>How must the JMC sketch sheets be drawn?</summary>
+          <p>In Model space, in metres (survey coordinates). Each sheet needs a closed rectangle polyline as its border, a title inside it containing “JMC Sketch” (the survey number is read from it), and the land-acquisition portion drawn as a hatch. A sheet without a closed rectangle border or a “JMC Sketch” title is skipped, so compare the sheet count in the log. The How to draw page in the app lists every rule.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ INSTALL + RELATED ============ -->
+    <section id="install" class="section">
+      <div class="section-head">
+        <p class="kicker">Install</p>
+        <h2>Download &amp; run</h2>
+        <p class="section-lead">JMC Sheet Maker is a single .exe that uses the .NET Framework 4 built into Windows 10 and 11. There's no installer: Python, ezdxf and PyMuPDF unpack to %LOCALAPPDATA% on first start (about 3 seconds). ODA File Converter is not bundled for licence reasons; get it free from opendesign.com.</p>
+      </div>
+      <ol class="steps">
+        <li class="step raised"><span class="step-num inset">1</span><h3>Download</h3><p>Click <b>Download for Windows</b> (51.5 MB). If your browser flags the new file, choose <b>Keep</b>.</p></li>
+        <li class="step raised"><span class="step-num inset">2</span><h3>Open it</h3><p>The app is unsigned, so on <b>“Windows protected your PC”</b> click <b>More info → Run anyway</b>. Then follow the <b>Setup</b> page: ODA File Converter and the Nudi fonts.</p></li>
+        <li class="step raised"><span class="step-num inset">3</span><h3>Try the sample</h3><p>Press <b>Sample</b> to write two made-up villages, then <b>Make sheets</b> to see the PDFs and the sheet list.</p></li>
+      </ol>
+      <p class="tip inset">Step-by-step help for Chrome, Edge and SmartScreen warnings: <a href="/#install">Download &amp; install guide</a>.</p>
+
+      <a class="related raised" href="/land-acquisition-calculator/">
+        <img class="app-icon" src="/assets/land-acquisition-calculator-icon.png" width="64" height="64" alt="">
+        <span>
+          <span class="kicker">Also for land acquisition</span>
+          <span class="tile-name">Land Acquisition Calculator — RFCTLARR compensation and 3A / 3D</span>
+          <span class="tile-desc">Survey-wise compensation under the RFCTLARR Act 2013 and NH Act 3A / 3D schedules, from your Excel LA schedule.</span>
+        </span>
+        <span class="tile-go">View <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="/">App Press Store</a> · Free Windows apps, ready in one press</p>
+    <p class="muted">JMC Sheet Maker is an independent tool, not affiliated with Autodesk, the Open Design Alliance or any government body. AutoCAD is a trademark of Autodesk, Inc.</p>
+  </footer>
+
+  <nav class="dock raised" aria-label="Sections">
+    <span class="dock-indicator inset" aria-hidden="true"></span>
+    <a class="dock-item is-active" href="#overview" data-section="overview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg>
+      <span>Overview</span>
+    </a>
+    <a class="dock-item" href="#features" data-section="features">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
+      <span>Features</span>
+    </a>
+    <a class="dock-fab" href="/downloads/JMC-Sheet-Maker.exe" download="JMC-Sheet-Maker.exe" aria-label="Download JMC Sheet Maker">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+    </a>
+    <a class="dock-item" href="#faq" data-section="faq">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4M12 16.5h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+    <a class="dock-item" href="#install" data-section="install">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10M9 12h10M9 18h10M5 6h.01M5 12h.01M5 18h.01"/></svg>
+      <span>Install</span>
+    </a>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>
