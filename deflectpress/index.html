@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DeflectPress – FWD Analysis Software (IRC:115 Overlay Design)</title>
   <meta name="description" content="DeflectPress is free FWD analysis software for Windows. Analyse falling weight deflectometer data per IRC:115-2014: back calculation of layer moduli, homogeneous sections, temperature and seasonal correction, remaining life and overlay design.">
-  <meta name="keywords" content="FWD analysis software, falling weight deflectometer analysis, FWD back calculation, backcalculation of layer moduli, IRC 115 overlay design, IRC:115-2014, pavement structural evaluation, remaining life, homogeneous sections, deflection basin, KGPBACK, KUAB fwd">
+  <meta name="keywords" content="FWD analysis software, falling weight deflectometer analysis, FWD back calculation, backcalculation of layer moduli, IRC 115 overlay design, IRC:115-2014, pavement structural evaluation, remaining life, homogeneous sections, deflection basin, KGPBACK, KUAB fwd, FWD report in Word, FWD study report format, IRC:115 report template">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://apppress-store.github.io/deflectpress/">
   <meta name="theme-color" content="#ECEEF2" media="(prefers-color-scheme: light)">
@@ -42,14 +42,15 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.2",
-        "fileSize": "341KB",
+        "softwareVersion": "1.3",
+        "fileSize": "446KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
           "https://apppress-store.github.io/assets/deflectpress/fwd-backcalculation-layer-moduli.webp",
           "https://apppress-store.github.io/assets/deflectpress/homogeneous-sections-cumulative-difference.webp",
-          "https://apppress-store.github.io/assets/deflectpress/remaining-life-overlay-design.webp"
+          "https://apppress-store.github.io/assets/deflectpress/remaining-life-overlay-design.webp",
+          "https://apppress-store.github.io/assets/deflectpress/fwd-report-in-word-format-01-02-survey-photos.webp"
         ],
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
@@ -84,6 +85,10 @@
             "acceptedAnswer": { "@type": "Answer", "text": "KUAB .fwd files and a table pasted from Excel (group, chainage, load, deflections D1 to Dn, pavement and air temperature). KGPBACK backcalculation output can be imported too." } },
           { "@type": "Question", "name": "Has DeflectPress been checked against the code?",
             "acceptedAnswer": { "@type": "Answer", "text": "Yes, against the IRC:115 Appendix IV worked example. The temperature and seasonal corrections and the 15th percentile moduli match exactly. Under the wheel centre the strains match the code: 284.4 vs 284.5 microstrain for the existing pavement, and 159.8 vs 159.8 microstrain with the 95 mm overlay. The layered-elastic solver matches IITPAVE to 0.2%." } },
+          { "@type": "Question", "name": "Can DeflectPress make the FWD report in Word?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. On the Word Report page, choose Format 01 or Format 02 and DeflectPress writes an editable FWD report in Word (.docx) with contents, tables, annexures and charts. Format 01 has a cover with the client and testing-agency blocks and logos, lists of tables and figures, chapters 1 and 2, and landscape Annexures 1.1 to 1.4 (deflections, moduli, remaining life, and overlay with the BC / DBM split). Format 02 has a running header and page numbers, contents, lists of tables, figures and annexures, acronyms, chapters 1 to 5 with Tables 1 to 4, and Annexures 1 (basic data) and 2 (back calculation). The contents and the table and figure lists are real Word fields, so the IRC:115 report template stays easy to edit." } },
+          { "@type": "Question", "name": "Do I need survey photos for the FWD study report?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Survey photos are optional. If you add them, they print two per row with captions (Photo 1.1, 1.2 …). Without photos, the photo section and its list-of-figures entries are left out of the report." } },
           { "@type": "Question", "name": "What does DeflectPress not cover?",
             "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
         ]
@@ -141,18 +146,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>341 KB · .exe</small>
+              Download for Windows <small>446 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.2</li>
+            <li class="inset-pill">v1.3</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">9FC73B153A03F0111EC4DCE115F5A5EFAD34A290A655A2A7DD555FAE1CE95163</code>
+            <code class="inset">172FC3BDC3AA8AE188DFB7A6FE9731D9D9F7E7C0DC1D967800A1B75390391254</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -239,12 +244,36 @@
             <h3>IRC checks and ready-to-submit reports</h3>
             <ul class="features">
               <li>PDF / HTML FWD study report: chapters, charts, summary of overlay sections, IRC checks and annexures</li>
+              <li>Editable FWD report in Word (.docx): Format 01 or Format 02</li>
               <li>Excel workbook with live formulas, plus CSV</li>
               <li>Optional client and consultant logos on the reports</li>
               <li>Two built-in samples: NH-XX (synthetic) and NH-XY (a real two-lane survey, anonymised)</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/irc115-checks-summary.webp" width="1200" height="767" loading="lazy" alt="IRC:115 checks summary for the FWD study"></div>
+        </article>
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>FWD report in Word: Format 01 or Format 02</h3>
+            <ul class="features">
+              <li><b>New in v1.3:</b> an editable FWD study report format in Word (.docx), in two layouts</li>
+              <li>Format 01: cover with client and testing-agency blocks and logos, lists of tables and figures, chapters 1 and 2, landscape Annexures 1.1 to 1.4</li>
+              <li>Format 02: running header and page numbers, contents, acronyms, chapters 1 to 5 with Tables 1 to 4, Annexures 1 and 2</li>
+              <li>Overlay split into BC (30 / 40 / 50 mm) plus DBM, or a single layer</li>
+              <li>Optional survey photos, two per row with captions; left out when there are none</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/fwd-report-in-word-format-01-02-survey-photos.webp" width="1200" height="767" loading="lazy" alt="FWD report in Word: choosing Format 01 or Format 02, overlay layers and optional survey photos in DeflectPress"></div>
+        </article>
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Project details on several lines</h3>
+            <ul class="features">
+              <li>Project name, client, testing agency and FWD equipment can each take several lines</li>
+              <li>Press Enter for a new line, or paste an address from Word; each line prints on the report cover</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/project-multi-line-client-testing-agency.webp" width="1200" height="767" loading="lazy" alt="DeflectPress project page with multi-line client and testing agency for the FWD report cover"></div>
         </article>
       </div>
 
@@ -301,6 +330,14 @@
         <details class="raised">
           <summary>Has DeflectPress been checked against the code?</summary>
           <p>Yes, against the IRC:115 Appendix IV worked example. The temperature and seasonal corrections and the 15th percentile moduli match exactly. Under the wheel centre the strains match the code: 284.4 vs 284.5 microstrain for the existing pavement, and 159.8 vs 159.8 microstrain with the 95 mm overlay. The layered-elastic solver matches IITPAVE to 0.2%.</p>
+        </details>
+        <details class="raised">
+          <summary>Can DeflectPress make the FWD report in Word?</summary>
+          <p>Yes. On the Word Report page, choose Format 01 or Format 02 and DeflectPress writes an editable FWD report in Word (.docx) with contents, tables, annexures and charts. Format 01 has a cover with the client and testing-agency blocks and logos, lists of tables and figures, chapters 1 and 2, and landscape Annexures 1.1 to 1.4 (deflections, moduli, remaining life, and overlay with the BC / DBM split). Format 02 has a running header and page numbers, contents, lists of tables, figures and annexures, acronyms, chapters 1 to 5 with Tables 1 to 4, and Annexures 1 (basic data) and 2 (back calculation). The contents and the table and figure lists are real Word fields, so the IRC:115 report template stays easy to edit.</p>
+        </details>
+        <details class="raised">
+          <summary>Do I need survey photos for the FWD study report?</summary>
+          <p>No. Survey photos are optional. If you add them, they print two per row with captions (Photo 1.1, 1.2 …). Without photos, the photo section and its list-of-figures entries are left out of the report.</p>
         </details>
         <details class="raised">
           <summary>What does DeflectPress not cover?</summary>
