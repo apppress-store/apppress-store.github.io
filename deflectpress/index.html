@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.5",
-        "fileSize": "626KB",
+        "softwareVersion": "1.6",
+        "fileSize": "667KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -97,6 +97,12 @@
             "acceptedAnswer": { "@type": "Answer", "text": "When the remaining life is less than the design traffic in msa (IRC:115 cl. 8.4 ix). The remaining life is the shorter of the fatigue life of the bituminous layer (Eq 16) and the subgrade rutting life (Eq 17), worked out from the FWD-backcalculated moduli. The overlay is then sized so that both lives reach the full design traffic (cl. 8.4 x). DeflectPress shows, for every homogeneous section, the decision (No strengthening, Strengthening, or Reconstruction when even 300 mm of overlay is not enough) and the governing criterion." } },
           { "@type": "Question", "name": "Does subgrade CBR matter in FWD overlay design?",
             "acceptedAnswer": { "@type": "Answer", "text": "Not directly. IRC:115 backcalculates the subgrade modulus from the measured deflections. The CBR only sets the 5 to 20 × CBR search range for that modulus (IRC:115 Appendix III.8.4 ii); DeflectPress can instead use the outer deflections (Eq III.2) or a 20 to 100 MPa range." } },
+          { "@type": "Question", "name": "How do I find copied or duplicated FWD deflection data?",
+            "acceptedAnswer": { "@type": "Answer", "text": "DeflectPress compares every deflection bowl with every other and lists the points whose deflections are exact or scaled copies of another point (all sensors in one ratio, for example 0.875), on the Data checks page, with serial no., lane, chainage, load, factor and section. IRC:115 cl. 6.1.1 asks for obviously erroneous data to be removed; real bowls of similar shape are not flagged." } },
+          { "@type": "Question", "name": "Does IRC:115 require inner-lane FWD testing?",
+            "acceptedAnswer": { "@type": "Answer", "text": "On four-lane and wider roads, IRC:115 Table 2 asks for the outer wheel path of the outer lanes and of the more distressed inner lane, the inner lane at double the spacing (for a fair pavement, 65 m and 130 m). Two-lane roads are tested along both outer wheel paths. DeflectPress checks the test spacing for each lane against its own limit." } },
+          { "@type": "Question", "name": "What is the minimum homogeneous section length in IRC:115?",
+            "acceptedAnswer": { "@type": "Answer", "text": "1.0 km with at least 12 test points (IRC:115 cl. 6.2.4); a sub-section with only one or two points needs localised rehabilitation. DeflectPress also checks the Eq 1 minimum sample size (15 points for a fair section)." } },
           { "@type": "Question", "name": "What does DeflectPress not cover?",
             "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
         ]
@@ -154,18 +160,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>626 KB · .exe</small>
+              Download for Windows <small>667 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.5</li>
+            <li class="inset-pill">v1.6</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">5C60F01D8D9B0B944B450D815384BBC0D1213A0146DBF8F8FF765DC9497F75A6</code>
+            <code class="inset">B6F7FBB56EB475D549F2F816558FA3543C70515EE7F95810CA3B656EEEF292A3</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -191,7 +197,7 @@
             <ul class="features">
               <li>KUAB <code>.fwd</code> files, or a table pasted from Excel</li>
               <li>Checks that the deflection basin falls with distance, load is 40 ± 4 kN, sensor capacity, at least 10 µm at 1.2 m, and pavement temperature ≤ 45 °C</li>
-              <li>Deflections normalised to 40 kN; excluded points keep their reason, measured bowls are never edited</li>
+              <li>Deflections normalised to 40 kN; excluded points keep their reason, and any value you correct by hand is marked, listed and can be restored</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/fwd-data-import-normalised-deflection.webp" width="1200" height="767" loading="lazy" alt="Falling weight deflectometer data import with deflection basin checks and normalised deflection"></div>
@@ -199,10 +205,34 @@
 
         <article class="feature-row raised">
           <div class="feature-text">
+            <h3>Data checks: copied FWD bowls and inner / outer lanes</h3>
+            <ul class="features">
+              <li><b>New in v1.6:</b> a <b>copied-bowl check</b> on the new Data checks page. Every deflection bowl is compared with every other; points whose deflections are all in one ratio (exact copies, or copies multiplied by one factor such as 0.875) are listed by group with serial no., lane, chainage, load, factor and section, as warnings under IRC:115 cl. 6.1.1 (obviously erroneous data must be removed). Real bowls of similar shape are not flagged (match within 0.01 µm)</li>
+              <li>The page also groups point warnings by reason, lists values edited by hand, and shows the bowl shape (D200/D0) for information only: IRC:115 sets no limit on it</li>
+              <li><b>New in v1.6:</b> <b>inner and outer lanes</b>. Each FWD file has a lane (outer lane, inner lane, paved shoulder, or read from the file name); points show as “LHS - Inner” in the app and the reports, and test spacing is checked for each wheel path against its own IRC:115 Table 2 limit (e.g. fair, four-lane divided: 65 m outer lane, 130 m inner lane)</li>
+              <li><b>New in v1.6:</b> <b>editable FWD data</b>. In the Measured view you can correct chainage, load, deflections and pavement temperature; every change is marked, listed on the Data checks page and saved in the project, and “Restore point” undoes it</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/irc115-data-checks-copied-fwd-deflection-bowls.webp" width="1200" height="767" loading="lazy" alt="IRC:115 data checks in DeflectPress: copied or scaled FWD deflection bowls, point warnings by reason, edited values and bowl shape"></div>
+        </article>
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>FWD data by lane, editable in the Measured view</h3>
+            <ul class="features">
+              <li>Lane column for each FWD file (Table 2): outer lane, inner lane, paved shoulder, or auto from the file name</li>
+              <li>Correct a chainage, load, deflection or pavement temperature in place; edited values are marked and can be restored</li>
+              <li>Normalised peak deflection D0 chart for the LHS and RHS wheel paths</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/fwd-data-inner-outer-lane-editable-deflections.webp" width="1200" height="767" loading="lazy" alt="FWD data page in DeflectPress with a lane column for inner and outer lanes and editable measured deflections"></div>
+        </article>
+        <article class="feature-row raised">
+          <div class="feature-text">
             <h3>Homogeneous sections by cumulative difference</h3>
             <ul class="features">
               <li>IRC:115 Eq 3 on SCI or D0, with automatic splits that keep at least 1 km and 12 points</li>
               <li>Or set breaks by hand, one section per lane or group, or point-wise analysis</li>
+              <li><b>New in v1.6:</b> every homogeneous section is checked against 1.0 km and 12 points (cl. 6.2.4; 1–2 points = localised rehabilitation) and the Eq 1 minimum sample (cl. 5.4.2), whatever minimums the auto split uses; manual breaks are flagged for comparison with the cumulative difference (Eq 3)</li>
               <li><b>New in v1.1:</b> manual breaks cut exactly at the chainages you type, and a <b>skip reach</b> (e.g. 2.3-2.6) leaves out a reconstruction or no-FWD-design reach: its end points go to the sections outside it, points inside are not used, and it is listed as “Skip reach” in the sections table and Table 9.1. Worked examples for breaks and skip reaches are shown under the table, for instance two skips: BREAKS 1.0 · SKIP 0.5-0.75, 2.3-2.6</li>
             </ul>
           </div>
@@ -230,6 +260,7 @@
               <li>Seasonal correction: winter Eq 6 / Eq 9, summer Eq 7 / Eq 8</li>
               <li><b>New in v1.2:</b> enter the <b>testing month</b> and <b>monsoon type</b> (south-west or north-east) and the cl. 6.5 season is picked for you; you can still change it, and a warning shows if it differs from the month</li>
               <li>15th percentile design moduli for each homogeneous section</li>
+              <li><b>New in v1.6:</b> modulus limits reported per layer, and the testing season reads “Monsoon / post-monsoon” (cl. 6.5.1)</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/temperature-seasonal-correction.webp" width="1200" height="767" loading="lazy" alt="Temperature correction to 35 °C and seasonal correction of backcalculated moduli"></div>
@@ -241,6 +272,7 @@
             <ul class="features">
               <li>Design traffic entered in msa, or calculated (Eq 10–11)</li>
               <li>Remaining life by Eq 16/17 under the standard dual wheel</li>
+              <li><b>New in v1.6:</b> directly entered design traffic gets a reminder of the 10-year overlay design life (cl. 7.3)</li>
               <li><b>New in v1.5:</b> strengthening needed or not, said plainly for every section (cl. 8.4 ix–x): <i>No strengthening</i>, <i>Strengthening</i> with the overlay thickness, or <i>Reconstruction</i> when even 300 mm is not enough, with the governing criterion (fatigue, Eq 16, or rutting, Eq 17)</li>
               <li>The decision is on Results &amp; Checks (with the sections and km needing strengthening), the status badge, the PDF / HTML, Excel (live formula) and both Word reports</li>
               <li>Bituminous overlay solved for the full design traffic, with balance traffic as an option</li>
@@ -274,6 +306,8 @@
               <li>Format 02: running header and page numbers, contents, acronyms, chapters 1 to 5 with Tables 1 to 4, Annexures 1 and 2</li>
               <li>Overlay split into BC (30 / 40 / 50 mm) plus DBM, or a single layer</li>
               <li>Optional survey photos, two per row with captions; left out when there are none</li>
+              <li><b>New in v1.6:</b> Format 01 wording: the conclusion names the strain that fails (fatigue or rutting), Table 4 shows the subgrade range actually used, the IITPAVE input tables show the dual wheel load, the text names the program actually used, and Annexure 1.1 is titled as normalised deflections</li>
+              <li><b>New in v1.6:</b> an overlay is never split into more BC than chosen (e.g. 85 mm = BC 40 + DBM 45), with a check that DBM is below 50 mm</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/fwd-report-in-word-format-01-02-survey-photos.webp" width="1200" height="767" loading="lazy" alt="FWD report in Word: choosing Format 01 or Format 02, overlay layers and optional survey photos in DeflectPress"></div>
@@ -367,6 +401,18 @@
         <details class="raised">
           <summary>Does subgrade CBR matter in FWD overlay design?</summary>
           <p>Not directly. IRC:115 backcalculates the subgrade modulus from the measured deflections. The CBR only sets the 5 to 20 × CBR search range for that modulus (IRC:115 Appendix III.8.4 ii); DeflectPress can instead use the outer deflections (Eq III.2) or a 20 to 100 MPa range.</p>
+        </details>
+        <details class="raised">
+          <summary>How do I find copied or duplicated FWD deflection data?</summary>
+          <p>DeflectPress compares every deflection bowl with every other and lists the points whose deflections are exact or scaled copies of another point (all sensors in one ratio, for example 0.875), on the Data checks page, with serial no., lane, chainage, load, factor and section. IRC:115 cl. 6.1.1 asks for obviously erroneous data to be removed; real bowls of similar shape are not flagged.</p>
+        </details>
+        <details class="raised">
+          <summary>Does IRC:115 require inner-lane FWD testing?</summary>
+          <p>On four-lane and wider roads, IRC:115 Table 2 asks for the outer wheel path of the outer lanes and of the more distressed inner lane, the inner lane at double the spacing (for a fair pavement, 65 m and 130 m). Two-lane roads are tested along both outer wheel paths. DeflectPress checks the test spacing for each lane against its own limit.</p>
+        </details>
+        <details class="raised">
+          <summary>What is the minimum homogeneous section length in IRC:115?</summary>
+          <p>1.0 km with at least 12 test points (IRC:115 cl. 6.2.4); a sub-section with only one or two points needs localised rehabilitation. DeflectPress also checks the Eq 1 minimum sample size (15 points for a fair section).</p>
         </details>
         <details class="raised">
           <summary>What does DeflectPress not cover?</summary>
