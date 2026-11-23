@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.4",
-        "fileSize": "620KB",
+        "softwareVersion": "1.5",
+        "fileSize": "626KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -92,7 +92,11 @@
           { "@type": "Question", "name": "Do I need KGPBACK or IITPAVE screenshots for the FWD report?",
             "acceptedAnswer": { "@type": "Answer", "text": "No. DeflectPress draws the back-calculation figures (input, and measured vs computed deflection bowl) and the strain-analysis figures (input and results for the existing pavement and, when needed, the overlaid pavement) from its own results. If you prefer your own KGPBACK or IITPAVE screenshots, add them on the Word Report page and they replace the drawn figures; the figures renumber automatically." } },
           { "@type": "Question", "name": "Where do I enter the subgrade CBR?",
-            "acceptedAnswer": { "@type": "Answer", "text": "On the Layers page, as 9 or 9%. DeflectPress uses it for the 5 to 20 × CBR subgrade modulus range, and a check flags a missing CBR." } },
+            "acceptedAnswer": { "@type": "Answer", "text": "On the Layers page, as 9 or 9%. DeflectPress uses it for the 5 to 20 × CBR subgrade modulus range (IRC:115 Appendix III.8.4 ii), and a check flags a missing CBR." } },
+          { "@type": "Question", "name": "When does a pavement need strengthening as per IRC:115?",
+            "acceptedAnswer": { "@type": "Answer", "text": "When the remaining life is less than the design traffic in msa (IRC:115 cl. 8.4 ix). The remaining life is the shorter of the fatigue life of the bituminous layer (Eq 16) and the subgrade rutting life (Eq 17), worked out from the FWD-backcalculated moduli. The overlay is then sized so that both lives reach the full design traffic (cl. 8.4 x). DeflectPress shows, for every homogeneous section, the decision (No strengthening, Strengthening, or Reconstruction when even 300 mm of overlay is not enough) and the governing criterion." } },
+          { "@type": "Question", "name": "Does subgrade CBR matter in FWD overlay design?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not directly. IRC:115 backcalculates the subgrade modulus from the measured deflections. The CBR only sets the 5 to 20 × CBR search range for that modulus (IRC:115 Appendix III.8.4 ii); DeflectPress can instead use the outer deflections (Eq III.2) or a 20 to 100 MPa range." } },
           { "@type": "Question", "name": "What does DeflectPress not cover?",
             "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
         ]
@@ -150,18 +154,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>620 KB · .exe</small>
+              Download for Windows <small>626 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.4</li>
+            <li class="inset-pill">v1.5</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">8ADDB9BD4CA19D033EA035C3B62BDD7B56F97715617E70E580A0C921407C6E02</code>
+            <code class="inset">5C60F01D8D9B0B944B450D815384BBC0D1213A0146DBF8F8FF765DC9497F75A6</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -212,7 +216,7 @@
               <li>Three-layer backcalculation with KGPBACK's objective: grid search, then Levenberg–Marquardt</li>
               <li>Modulus ranges from Appendix III, including Eq III.2 for the subgrade per point</li>
               <li>Fit % per point and range-limit flags; KGPBACK output can be imported</li>
-              <li><b>New in v1.4:</b> subgrade CBR input on the Layers page (9 or 9%) for the 5–20 × CBR subgrade range, with a check if it is missing</li>
+              <li><b>New in v1.4:</b> subgrade CBR input on the Layers page (9 or 9%) for the 5–20 × CBR subgrade range (App III.8.4 ii), with a check if it is missing</li>
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/pavement-layers-backcalculation-ranges.webp" width="1200" height="767" loading="lazy" alt="Pavement layers and backcalculation modulus ranges from IRC:115 Appendix III"></div>
@@ -237,6 +241,8 @@
             <ul class="features">
               <li>Design traffic entered in msa, or calculated (Eq 10–11)</li>
               <li>Remaining life by Eq 16/17 under the standard dual wheel</li>
+              <li><b>New in v1.5:</b> strengthening needed or not, said plainly for every section (cl. 8.4 ix–x): <i>No strengthening</i>, <i>Strengthening</i> with the overlay thickness, or <i>Reconstruction</i> when even 300 mm is not enough, with the governing criterion (fatigue, Eq 16, or rutting, Eq 17)</li>
+              <li>The decision is on Results &amp; Checks (with the sections and km needing strengthening), the status badge, the PDF / HTML, Excel (live formula) and both Word reports</li>
               <li>Bituminous overlay solved for the full design traffic, with balance traffic as an option</li>
               <li>Auto overlay material: VG40 at 3000 MPa for NH / expressways or 20 msa and above, otherwise VG30 at 2000 MPa (IRC:37-2018 Tables 9.1 / 9.2)</li>
             </ul>
@@ -352,7 +358,15 @@
         </details>
         <details class="raised">
           <summary>Where do I enter the subgrade CBR?</summary>
-          <p>On the Layers page, as 9 or 9%. DeflectPress uses it for the 5 to 20 × CBR subgrade modulus range, and a check flags a missing CBR.</p>
+          <p>On the Layers page, as 9 or 9%. DeflectPress uses it for the 5 to 20 × CBR subgrade modulus range (IRC:115 Appendix III.8.4 ii), and a check flags a missing CBR.</p>
+        </details>
+        <details class="raised">
+          <summary>When does a pavement need strengthening as per IRC:115?</summary>
+          <p>When the remaining life is less than the design traffic in msa (IRC:115 cl. 8.4 ix). The remaining life is the shorter of the fatigue life of the bituminous layer (Eq 16) and the subgrade rutting life (Eq 17), worked out from the FWD-backcalculated moduli. The overlay is then sized so that both lives reach the full design traffic (cl. 8.4 x). DeflectPress shows, for every homogeneous section, the decision (No strengthening, Strengthening, or Reconstruction when even 300 mm of overlay is not enough) and the governing criterion.</p>
+        </details>
+        <details class="raised">
+          <summary>Does subgrade CBR matter in FWD overlay design?</summary>
+          <p>Not directly. IRC:115 backcalculates the subgrade modulus from the measured deflections. The CBR only sets the 5 to 20 × CBR search range for that modulus (IRC:115 Appendix III.8.4 ii); DeflectPress can instead use the outer deflections (Eq III.2) or a 20 to 100 MPa range.</p>
         </details>
         <details class="raised">
           <summary>What does DeflectPress not cover?</summary>
