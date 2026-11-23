@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.6",
-        "fileSize": "667KB",
+        "softwareVersion": "1.6.1",
+        "fileSize": "670KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -103,6 +103,8 @@
             "acceptedAnswer": { "@type": "Answer", "text": "On four-lane and wider roads, IRC:115 Table 2 asks for the outer wheel path of the outer lanes and of the more distressed inner lane, the inner lane at double the spacing (for a fair pavement, 65 m and 130 m). Two-lane roads are tested along both outer wheel paths. DeflectPress checks the test spacing for each lane against its own limit." } },
           { "@type": "Question", "name": "What is the minimum homogeneous section length in IRC:115?",
             "acceptedAnswer": { "@type": "Answer", "text": "1.0 km with at least 12 test points (IRC:115 cl. 6.2.4); a sub-section with only one or two points needs localised rehabilitation. DeflectPress also checks the Eq 1 minimum sample size (15 points for a fair section)." } },
+          { "@type": "Question", "name": "Can I paste FWD deflections I have already averaged?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose \"Averaged\" when pasting (or in the DATA column of the FWD file list); DeflectPress then uses the values as the point averages and does not ask for 3 drops. Paste raw drops instead and DeflectPress averages them as IRC:115 cl. 6.1.1 describes. KUAB .fwd machine files are always read as raw drops." } },
           { "@type": "Question", "name": "What does DeflectPress not cover?",
             "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
         ]
@@ -160,18 +162,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>667 KB · .exe</small>
+              Download for Windows <small>670 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.6</li>
+            <li class="inset-pill">v1.6.1</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">B6F7FBB56EB475D549F2F816558FA3543C70515EE7F95810CA3B656EEEF292A3</code>
+            <code class="inset">3E78492323DDD17B106F7CA966C7196DD4A0F6E6DE296F3793FED8A629EFAA6B</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -210,6 +212,7 @@
               <li><b>New in v1.6:</b> a <b>copied-bowl check</b> on the new Data checks page. Every deflection bowl is compared with every other; points whose deflections are all in one ratio (exact copies, or copies multiplied by one factor such as 0.875) are listed by group with serial no., lane, chainage, load, factor and section, as warnings under IRC:115 cl. 6.1.1 (obviously erroneous data must be removed). Real bowls of similar shape are not flagged (match within 0.01 µm)</li>
               <li>The page also groups point warnings by reason, lists values edited by hand, and shows the bowl shape (D200/D0) for information only: IRC:115 sets no limit on it</li>
               <li><b>New in v1.6:</b> <b>inner and outer lanes</b>. Each FWD file has a lane (outer lane, inner lane, paved shoulder, or read from the file name); points show as “LHS - Inner” in the app and the reports, and test spacing is checked for each wheel path against its own IRC:115 Table 2 limit (e.g. fair, four-lane divided: 65 m outer lane, 130 m inner lane)</li>
+              <li><b>New in v1.6.1:</b> <b>raw drops or averaged values</b>. Each FWD file says whether it holds the raw drops or values already averaged per point, and Paste table asks which one. For averaged data the “fewer than 3 drops” warning is not raised (the averaging was done before entry, cl. 6.1.1); raw drops are still averaged by DeflectPress and checked for 3 drops. KUAB .fwd files are always raw drops</li>
               <li><b>New in v1.6:</b> <b>editable FWD data</b>. In the Measured view you can correct chainage, load, deflections and pavement temperature; every change is marked, listed on the Data checks page and saved in the project, and “Restore point” undoes it</li>
             </ul>
           </div>
@@ -413,6 +416,10 @@
         <details class="raised">
           <summary>What is the minimum homogeneous section length in IRC:115?</summary>
           <p>1.0 km with at least 12 test points (IRC:115 cl. 6.2.4); a sub-section with only one or two points needs localised rehabilitation. DeflectPress also checks the Eq 1 minimum sample size (15 points for a fair section).</p>
+        </details>
+        <details class="raised">
+          <summary>Can I paste FWD deflections I have already averaged?</summary>
+          <p>Yes. Choose “Averaged” when pasting (or in the DATA column of the FWD file list); DeflectPress then uses the values as the point averages and does not ask for 3 drops. Paste raw drops instead and DeflectPress averages them as IRC:115 cl. 6.1.1 describes. KUAB .fwd machine files are always read as raw drops.</p>
         </details>
         <details class="raised">
           <summary>What does DeflectPress not cover?</summary>
