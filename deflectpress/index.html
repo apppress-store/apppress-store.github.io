@@ -42,8 +42,8 @@
         "applicationCategory": "EngineeringApplication",
         "applicationSubCategory": "Pavement structural evaluation",
         "operatingSystem": "Windows",
-        "softwareVersion": "1.6.2",
-        "fileSize": "671KB",
+        "softwareVersion": "1.7",
+        "fileSize": "731KB",
         "downloadUrl": "https://apppress-store.github.io/downloads/DeflectPress-FWD-Analysis.exe",
         "image": "https://apppress-store.github.io/assets/deflectpress-icon.png",
         "screenshot": [
@@ -107,6 +107,10 @@
             "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose \"Averaged\" when pasting (or in the DATA column of the FWD file list); DeflectPress then uses the values as the point averages and does not ask for 3 drops. Paste raw drops instead and DeflectPress averages them as IRC:115 cl. 6.1.1 describes. KUAB .fwd machine files are always read as raw drops." } },
           { "@type": "Question", "name": "Are inner and outer lanes analysed as separate sections?",
             "acceptedAnswer": { "@type": "Answer", "text": "No. Homogeneous sections cover the carriageway (LHS, RHS, or both together), and test points from all its lanes are used together, as IRC:115 cl. 5.4.2 applies the most distressed lane's sample size to the whole carriageway. Lanes only set the Table 2 test spacing, which DeflectPress checks per lane." } },
+          { "@type": "Question", "name": "Can DeflectPress export FWD data as KUAB .fwd files?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export .fwd files on the FWD Data page writes imported or pasted falling weight deflectometer data in the KUAB .fwd text layout: the header records, one D line per drop with GPS and time columns, comment lines and the footer. The files open again with Import .fwd files, and each one ends with a note saying which columns DeflectPress filled or modified." } },
+          { "@type": "Question", "name": "Can I paste FWD data from Excel?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Paste the table and pick what each column is (chainage, drop no., load, D0 to D8, air or pavement temperature, latitude, longitude, altitude, time, comment); common headings are detected for you. Raw KUAB .fwd lines (J, D and C records) can be pasted directly as well." } },
           { "@type": "Question", "name": "What does DeflectPress not cover?",
             "acceptedAnswer": { "@type": "Answer", "text": "Rigid pavements (IRC:117), Benkelman beam deflection (IRC:81), FWD formats other than KUAB .fwd and pasted tables, and a cemented-base fatigue criterion. It is an engineering design aid: results must be compared with distress data, test pits and cores, and the engineer is responsible for the inputs and the adopted design." } }
         ]
@@ -164,18 +168,18 @@
           <div class="cta-row">
             <a class="btn btn-amber" href="/downloads/DeflectPress-FWD-Analysis.exe" download="DeflectPress-FWD-Analysis.exe">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
-              Download for Windows <small>671 KB · .exe</small>
+              Download for Windows <small>731 KB · .exe</small>
             </a>
             <a class="btn btn-soft" href="#features">See what it does</a>
           </div>
           <ul class="facts">
-            <li class="inset-pill">v1.6.2</li>
+            <li class="inset-pill">v1.7</li>
             <li class="inset-pill">Single .exe · no install</li>
             <li class="inset-pill">Light &amp; dark</li>
           </ul>
           <details class="hash">
             <summary>Verify the download (SHA-256)</summary>
-            <code class="inset">EB60421E5E7EA785BFF820CF222B2DA0D4EC2C3075DE020D414B5FCD6264A070</code>
+            <code class="inset">B198CFFFF2758511E89D9B409545136B852143B7977D5AFF2EB68B0A807620C7</code>
             <p>In PowerShell: <code>Get-FileHash "DeflectPress-FWD-Analysis.exe"</code></p>
           </details>
         </div>
@@ -200,6 +204,7 @@
             <h3>Import FWD data and check every deflection basin</h3>
             <ul class="features">
               <li>KUAB <code>.fwd</code> files, or a table pasted from Excel</li>
+              <li><b>New in v1.7:</b> <b>paste FWD data from Excel with column mapping</b>: a paste window shows the table and lets you pick what each column is (chainage, drop no., load, D0–D8, air / pavement temperature, lat, long, alt, time, comment); common headings are detected, and raw KUAB .fwd lines (J / D / C records) can be pasted too</li>
               <li>Checks that the deflection basin falls with distance, load is 40 ± 4 kN, sensor capacity, at least 10 µm at 1.2 m, and pavement temperature ≤ 45 °C</li>
               <li>Deflections normalised to 40 kN; excluded points keep their reason, and any value you correct by hand is marked, listed and can be restored</li>
             </ul>
@@ -230,6 +235,19 @@
             </ul>
           </div>
           <div class="shot-well inset"><img src="/assets/deflectpress/fwd-data-inner-outer-lane-editable-deflections.webp" width="1200" height="767" loading="lazy" alt="FWD data page in DeflectPress with a lane column for inner and outer lanes and editable measured deflections"></div>
+        </article>
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>FWD data export: KUAB .fwd files</h3>
+            <ul class="features">
+              <li><b>New in v1.7:</b> <b>Export .fwd files</b> (top right of the FWD Data page) writes each loaded falling weight deflectometer file, imported or pasted, as a KUAB .fwd file: UTF-16, the same header records (operator, road, weather, date, version, load mode, plate radius, drop sequence, heights and impact loads, sensors, reference offset, test point spacing), one D line per drop with GPS and time columns, comment lines and the footer</li>
+              <li>A settings check explains the drop sequence, recorded drops and impact loads, and checks the drops per point and the mean load (IRC:115 cl. 4.4: 40 ± 4 kN)</li>
+              <li>Distance from the first test point (0, 250, 500 …) or as in the data; drops with no time left blank or estimated from a start time, survey speed and seconds between drops</li>
+              <li>X Y Z by chainage: type or paste latitude, longitude and altitude for each test point, with an optional comment line after the last drop as in KUAB files</li>
+              <li>Every exported file ends with a note saying it was exported by DeflectPress and which columns (X, Y, Z, T, comment) were filled or modified, so whoever uses the file knows</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/deflectpress/export-fwd-data-kuab-fwd-files.webp" width="1200" height="895" loading="lazy" alt="Export FWD data as KUAB .fwd files in DeflectPress – header details, drop settings check and end-of-file note"></div>
         </article>
         <article class="feature-row raised">
           <div class="feature-text">
@@ -295,6 +313,7 @@
               <li>PDF / HTML FWD study report: chapters, charts, summary of overlay sections, IRC checks and annexures</li>
               <li>Editable FWD report in Word (.docx): Format 01 or Format 02</li>
               <li>Excel workbook with live formulas, plus CSV</li>
+              <li><b>New in v1.7:</b> table headings stay visible while scrolling on Results &amp; Checks and Life &amp; Overlay</li>
               <li>Optional client and consultant logos on the reports</li>
               <li>Two built-in samples: NH-XX (synthetic) and NH-XY (a real two-lane survey, anonymised)</li>
             </ul>
@@ -427,6 +446,14 @@
         <details class="raised">
           <summary>Are inner and outer lanes analysed as separate sections?</summary>
           <p>No. Homogeneous sections cover the carriageway (LHS, RHS, or both together), and test points from all its lanes are used together, as IRC:115 cl. 5.4.2 applies the most distressed lane's sample size to the whole carriageway. Lanes only set the Table 2 test spacing, which DeflectPress checks per lane.</p>
+        </details>
+        <details class="raised">
+          <summary>Can DeflectPress export FWD data as KUAB .fwd files?</summary>
+          <p>Yes. Export .fwd files on the FWD Data page writes imported or pasted falling weight deflectometer data in the KUAB .fwd text layout: the header records, one D line per drop with GPS and time columns, comment lines and the footer. The files open again with Import .fwd files, and each one ends with a note saying which columns DeflectPress filled or modified.</p>
+        </details>
+        <details class="raised">
+          <summary>Can I paste FWD data from Excel?</summary>
+          <p>Yes. Paste the table and pick what each column is (chainage, drop no., load, D0 to D8, air or pavement temperature, latitude, longitude, altitude, time, comment); common headings are detected for you. Raw KUAB .fwd lines (J, D and C records) can be pasted directly as well.</p>
         </details>
         <details class="raised">
           <summary>What does DeflectPress not cover?</summary>
