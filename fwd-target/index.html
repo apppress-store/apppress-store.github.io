@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FWD Target – IRC:115 Target Deflection &amp; FWD Survey Planning Software</title>
+  <meta name="description" content="FWD Target is free Windows software that works backwards from an overlay design: it finds the target FWD deflection (characteristic D0 and deflection bowl band) that leads to your overlay under IRC:115-2014, plans the falling weight deflectometer survey (Table 2 spacing, staggered test points) and checks a real survey against the targets.">
+  <meta name="keywords" content="FWD target deflection, characteristic deflection IRC 115, expected FWD deflection bowl, falling weight deflectometer survey planning, FWD test spacing IRC 115 Table 2, FWD survey plan, staggered FWD test points, overlay design check, IRC 115 overlay design, remaining life, FWD field checklist, deflection band, pavement structural evaluation">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://apppress-store.github.io/fwd-target/">
+  <meta name="theme-color" content="#ECEEF2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#2A2D33" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="App Press Store">
+  <meta property="og:url" content="https://apppress-store.github.io/fwd-target/">
+  <meta property="og:title" content="FWD Target – IRC:115 Target Deflection &amp; FWD Survey Planning">
+  <meta property="og:description" content="Free Windows tool: the FWD deflection band that leads to your overlay under IRC:115, the survey plan, a blank field checklist and a check of the real survey.">
+  <meta property="og:image" content="https://apppress-store.github.io/assets/fwd-target/og-fwd-target.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FWD Target showing the target deflection bowl and the overlay for each characteristic deflection">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FWD Target – IRC:115 Target Deflection &amp; FWD Survey Planning">
+  <meta name="twitter:description" content="Free Windows tool: target FWD deflection band for your overlay, survey plan and survey check per IRC:115.">
+  <meta name="twitter:image" content="https://apppress-store.github.io/assets/fwd-target/og-fwd-target.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/fwd-target-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://apppress-store.github.io/fwd-target/#app",
+        "name": "FWD Target",
+        "alternateName": ["FWD Target Deflection Software", "IRC 115 FWD Survey Planning"],
+        "url": "https://apppress-store.github.io/fwd-target/",
+        "description": "Free Windows software for IRC:115-2014 design targets and FWD survey planning: from the design overlay, existing crust, subgrade CBR and design traffic it finds the layer moduli and the falling weight deflectometer deflection band that lead to that overlay, plans the survey to IRC:115 Table 2 and Eq 1, and checks a real FWD survey against the targets.",
+        "applicationCategory": "EngineeringApplication",
+        "applicationSubCategory": "Pavement structural evaluation",
+        "operatingSystem": "Windows",
+        "softwareVersion": "1.0",
+        "fileSize": "332KB",
+        "downloadUrl": "https://apppress-store.github.io/downloads/FWD-Target.exe",
+        "image": "https://apppress-store.github.io/assets/fwd-target-icon.png",
+        "screenshot": [
+          "https://apppress-store.github.io/assets/fwd-target/fwd-target-targets.webp",
+          "https://apppress-store.github.io/assets/fwd-target/fwd-target-survey-plan.webp",
+          "https://apppress-store.github.io/assets/fwd-target/fwd-target-check-survey.webp"
+        ],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "publisher": { "@type": "Organization", "name": "App Press Store", "url": "https://apppress-store.github.io/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "App Press Store", "item": "https://apppress-store.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "FWD Target", "item": "https://apppress-store.github.io/fwd-target/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://apppress-store.github.io/fwd-target/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What does FWD Target do?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It works backwards from a strengthening design. From the planned overlay (BC + DBM), the existing crust, the subgrade CBR and the design traffic, it finds the pavement strength and the FWD deflection band that lead to that overlay under IRC:115-2014, using the same analysis as DeflectPress. It then plans the falling weight deflectometer survey and checks the real survey against the targets." } },
+          { "@type": "Question", "name": "How is the target deflection worked out?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The subgrade modulus comes from the CBR (IRC:37-2018 Eq 6.2) and the granular modulus from its thickness (Eq 7.1); the bituminous modulus starts at the middle of the IRC:115 Appendix III.8.4 range for the condition. The three moduli are scaled together until the IRC:115 remaining-life and overlay analysis (Eq 16 and 17, overlay in 5 mm steps) gives exactly the design overlay. The band is every strength that still gives that overlay. The bowl (D0 to D1200 at 40 kN) is computed for the survey temperature and season." } },
+          { "@type": "Question", "name": "How is the result checked?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each target bowl is run through the DeflectPress engine: backcalculation, temperature and seasonal correction, remaining life and overlay. The overlay that comes out must equal the design overlay, and the result is shown as OK or Differs for every section." } },
+          { "@type": "Question", "name": "What FWD test spacing does the survey plan use?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The IRC:115-2014 Table 2 spacing for the pavement condition and number of lanes, staggered between the two carriageway sides, with the inner lane offset on four-lane roads. Each homogeneous section gets at least the Eq 1 minimum number of points (15 for a fair pavement); the spacing is halved where a short section would fall below it." } },
+          { "@type": "Question", "name": "Does FWD Target generate deflection readings?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Targets are bands per homogeneous section, for planning and checking only. FWD Target never writes deflection readings for stations or chainages: the field checklist lists the test chainages with every reading column left blank, and only the FWD records the deflections." } },
+          { "@type": "Question", "name": "How does the survey check work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Load the KUAB .fwd files or a DeflectPress project. For each section it shows the normalised D0, the characteristic D0 (15 % of the values higher), the points above and below the target band at the survey's own pavement temperature, and the overlay that the D0 indicates. A full DeflectPress analysis of the survey at the design section breaks gives the complete IRC:115 result." } },
+          { "@type": "Question", "name": "What reports does it make?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A Word report (inputs, method, targets, bowl tables and charts, self-check, survey plan and survey check), an Excel workbook, and a separate Excel field checklist for the survey team." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('apppress-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="App Press Store home">
+      <span class="logo raised" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect x="5" y="8" width="22" height="14" rx="3.5"/><path d="M16 22v4M11 27h10"/></svg>
+      </span>
+      <span class="brand-name">App Press <b>Store</b></span>
+    </a>
+    <div class="top-actions">
+      <a class="icon-btn" href="/#home" aria-label="Search all apps" title="Search all apps">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      </a>
+      <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="switch-label switch-off">Light</span>
+        <span class="switch-label switch-on">Dark</span>
+        <span class="switch-knob" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ OVERVIEW ============ -->
+    <section id="overview" class="section app-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">App Press Store</a><span aria-hidden="true">›</span><span>FWD Target</span></nav>
+
+      <div class="hero">
+        <div>
+          <div class="app-top">
+            <img class="app-icon" src="/assets/fwd-target-icon.png" width="64" height="64" alt="FWD Target icon">
+            <p class="eyebrow inset-pill"><span class="dot"></span> Free · Windows · IRC:115-2014</p>
+          </div>
+          <h1>FWD Target: <span class="amber-text">target FWD deflection</span> and survey planning to IRC:115</h1>
+          <p class="lead">FWD Target is free Windows software that works backwards from your overlay design: it finds the <b>target falling weight deflectometer deflection</b> — the characteristic D0 and the deflection bowl band — that leads to that overlay under <b>IRC:115-2014</b>, plans the <b>FWD survey</b> and checks the real survey against the targets.</p>
+          <div class="cta-row">
+            <a class="btn btn-amber" href="/downloads/FWD-Target.exe" download="FWD-Target.exe">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+              Download for Windows <small>332 KB · .exe</small>
+            </a>
+            <a class="btn btn-soft" href="#features">See what it does</a>
+          </div>
+          <ul class="facts">
+            <li class="inset-pill">v1.0</li>
+            <li class="inset-pill">Single .exe · no install</li>
+            <li class="inset-pill">Light &amp; dark</li>
+          </ul>
+          <details class="hash">
+            <summary>Verify the download (SHA-256)</summary>
+            <code class="inset">D3B1D2DF80C5785BEF632659A10DB6B115274A555D300D8C8FBFAC729C5B359F</code>
+            <p>In PowerShell: <code>Get-FileHash "FWD-Target.exe"</code></p>
+          </details>
+        </div>
+        <div class="shot-well inset hero-shot">
+          <img class="shot-light" src="/assets/fwd-target/fwd-target-targets.webp" width="1200" height="767" alt="Target FWD deflection bowl at 40 kN and the IRC:115 overlay for each characteristic deflection">
+          <img class="shot-dark" src="/assets/fwd-target/fwd-target-targets-dark.webp" width="1200" height="767" alt="FWD Target targets page in dark mode">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="kicker">Features</p>
+        <h2>From the overlay you plan to the FWD survey that confirms it</h2>
+        <p class="section-lead">Enter the design overlay, existing crust, subgrade CBR and design traffic for each homogeneous section. FWD Target gives the pavement strength and deflection band behind that overlay, the test layout, and a check of the survey once it is done.</p>
+      </div>
+
+      <div class="feature-rows">
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Design inputs per homogeneous section</h3>
+            <ul class="features">
+              <li>Existing BC, DBM, WMM and GSB, subgrade CBR and the planned overlay (BC + DBM) for each section</li>
+              <li>Road category, carriageway (single, intermediate, 2-lane, 4-lane), condition Good / Fair / Bad, terrain and design msa</li>
+              <li>Starting moduli from IRC:37-2018 (subgrade from CBR, granular from thickness); inputs outside the IRC:115 App III.8.4 ranges are flagged</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/fwd-target/fwd-target-design-inputs.webp" width="1200" height="767" loading="lazy" alt="Design inputs: existing crust, CBR and overlay for each homogeneous section"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Target deflection bowl and characteristic D0</h3>
+            <ul class="features">
+              <li>Layer moduli that give exactly the design overlay under IRC:115 (remaining life Eq 16 / 17, overlay in 5 mm steps), and the band that still gives it</li>
+              <li>The moduli the FWD should see at the survey temperature (Eq 4–5) and season (Eq 6–9)</li>
+              <li>Expected D0–D1200 deflection bowl band at 40 kN, SCI, remaining life and strains after the overlay</li>
+              <li>Overlay against characteristic D0 for the section, and a self-check through the DeflectPress engine</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/fwd-target/fwd-target-targets.webp" width="1200" height="767" loading="lazy" alt="Target deflection bowl band and overlay against characteristic deflection"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>FWD survey plan: Table 2 spacing, staggered points</h3>
+            <ul class="features">
+              <li>Test spacing from IRC:115-2014 Table 2 for the condition and lanes, staggered between LHS and RHS</li>
+              <li>Eq 1 minimum sample size checked for every homogeneous section</li>
+              <li>The list of test chainages, and an Excel field checklist with blank columns for the site record</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/fwd-target/fwd-target-survey-plan.webp" width="1200" height="767" loading="lazy" alt="FWD survey plan with IRC:115 Table 2 test spacing and staggered test chainages"></div>
+        </article>
+
+        <article class="feature-row raised">
+          <div class="feature-text">
+            <h3>Check the real FWD survey against the targets</h3>
+            <ul class="features">
+              <li>Load KUAB .fwd files or a DeflectPress project</li>
+              <li>Normalised D0 against the target band per section, the characteristic D0 and the overlay it indicates</li>
+              <li>Run the full DeflectPress analysis of the survey at the design section breaks</li>
+              <li>Word report, Excel workbook and field checklist</li>
+            </ul>
+          </div>
+          <div class="shot-well inset"><img src="/assets/fwd-target/fwd-target-check-survey.webp" width="1200" height="767" loading="lazy" alt="FWD survey deflections compared with the target band for each section"></div>
+        </article>
+      </div>
+
+      <div class="validation raised">
+        <h3>Targets, not readings</h3>
+        <ul class="features">
+          <li>Every target bowl is run back through the DeflectPress IRC:115 analysis and returns the design overlay</li>
+          <li>FWD Target never writes deflection readings for stations or chainages: targets are bands per section, and the field checklist leaves every reading column blank</li>
+        </ul>
+        <p class="note"><b>A design aid.</b> Targets are expectations, not measurements: the FWD survey decides the final overlay. The engineer remains responsible for the inputs and the adopted design.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>FWD target deflection questions</h2>
+      </div>
+      <div class="faq">
+        <details class="raised">
+          <summary>What does FWD Target do?</summary>
+          <p>It works backwards from a strengthening design. From the planned overlay (BC + DBM), the existing crust, the subgrade CBR and the design traffic, it finds the pavement strength and the FWD deflection band that lead to that overlay under IRC:115-2014, using the same analysis as <a href="/deflectpress/">DeflectPress</a>. It then plans the falling weight deflectometer survey and checks the real survey against the targets.</p>
+        </details>
+        <details class="raised">
+          <summary>How is the target deflection worked out?</summary>
+          <p>The subgrade modulus comes from the CBR (IRC:37-2018 Eq 6.2) and the granular modulus from its thickness (Eq 7.1); the bituminous modulus starts at the middle of the IRC:115 Appendix III.8.4 range for the condition. The three moduli are scaled together until the IRC:115 remaining-life and overlay analysis (Eq 16 and 17, overlay in 5 mm steps) gives exactly the design overlay. The band is every strength that still gives that overlay. The bowl (D0 to D1200 at 40 kN) is computed for the survey temperature and season.</p>
+        </details>
+        <details class="raised">
+          <summary>How is the result checked?</summary>
+          <p>Each target bowl is run through the DeflectPress engine: backcalculation, temperature and seasonal correction, remaining life and overlay. The overlay that comes out must equal the design overlay, and the result is shown as OK or Differs for every section.</p>
+        </details>
+        <details class="raised">
+          <summary>What FWD test spacing does the survey plan use?</summary>
+          <p>The IRC:115-2014 Table 2 spacing for the pavement condition and number of lanes, staggered between the two carriageway sides, with the inner lane offset on four-lane roads. Each homogeneous section gets at least the Eq 1 minimum number of points (15 for a fair pavement); the spacing is halved where a short section would fall below it.</p>
+        </details>
+        <details class="raised">
+          <summary>Does FWD Target generate deflection readings?</summary>
+          <p>No. Targets are bands per homogeneous section, for planning and checking only. FWD Target never writes deflection readings for stations or chainages: the field checklist lists the test chainages with every reading column left blank, and only the FWD records the deflections.</p>
+        </details>
+        <details class="raised">
+          <summary>How does the survey check work?</summary>
+          <p>Load the KUAB .fwd files or a DeflectPress project. For each section it shows the normalised D0, the characteristic D0 (15 % of the values higher), the points above and below the target band at the survey's own pavement temperature, and the overlay that the D0 indicates. A full DeflectPress analysis of the survey at the design section breaks gives the complete IRC:115 result.</p>
+        </details>
+        <details class="raised">
+          <summary>What reports does it make?</summary>
+          <p>A Word report (inputs, method, targets, bowl tables and charts, self-check, survey plan and survey check), an Excel workbook, and a separate Excel field checklist for the survey team.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ INSTALL + RELATED ============ -->
+    <section id="install" class="section">
+      <div class="section-head">
+        <p class="kicker">Install</p>
+        <h2>Download &amp; run</h2>
+        <p class="section-lead">FWD Target is a single .exe that uses the .NET Framework 4 built into Windows 10 and 11. There's no installer.</p>
+      </div>
+      <ol class="steps">
+        <li class="step raised"><span class="step-num inset">1</span><h3>Download</h3><p>Click <b>Download for Windows</b>. If your browser flags the new file, choose <b>Keep</b>.</p></li>
+        <li class="step raised"><span class="step-num inset">2</span><h3>Open it</h3><p>On <b>“Windows protected your PC”</b>, click <b>More info → Run anyway</b>.</p></li>
+        <li class="step raised"><span class="step-num inset">3</span><h3>Try the sample</h3><p>It opens with a two-section sample road. Change the inputs, or press <b>New</b> for your own project.</p></li>
+      </ol>
+      <p class="tip inset">Step-by-step help for Chrome, Edge and SmartScreen warnings: <a href="/#install">Download &amp; install guide</a>.</p>
+
+      <a class="related raised" href="/deflectpress/">
+        <img class="app-icon" src="/assets/deflectpress-icon.png" width="64" height="64" alt="">
+        <span>
+          <span class="kicker">After the survey</span>
+          <span class="tile-name">DeflectPress — FWD analysis software (IRC:115)</span>
+          <span class="tile-desc">Falling weight deflectometer back calculation, homogeneous sections, remaining life and IRC:115 overlay design, with the FWD report in Word.</span>
+        </span>
+        <span class="tile-go">View <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+      </a>
+      <a class="related raised" href="/traffic-analysis/">
+        <img class="app-icon" src="/assets/traffic-analysis-icon.png" width="64" height="64" alt="">
+        <span>
+          <span class="kicker">Design traffic</span>
+          <span class="tile-name">Traffic Analysis — traffic survey analysis to IRC</span>
+          <span class="tile-desc">TVC, TMC, OD and axle load surveys, giving the traffic and design msa.</span>
+        </span>
+        <span class="tile-go">View <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="/">App Press Store</a> · Free Windows apps, ready in one press</p>
+    <p class="muted">FWD Target is an independent tool and is not affiliated with IRC or any government body.</p>
+  </footer>
+
+  <nav class="dock raised" aria-label="Sections">
+    <span class="dock-indicator inset" aria-hidden="true"></span>
+    <a class="dock-item is-active" href="#overview" data-section="overview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg>
+      <span>Overview</span>
+    </a>
+    <a class="dock-item" href="#features" data-section="features">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>
+      <span>Features</span>
+    </a>
+    <a class="dock-fab" href="/downloads/FWD-Target.exe" download="FWD-Target.exe" aria-label="Download FWD Target">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>
+    </a>
+    <a class="dock-item" href="#faq" data-section="faq">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4M12 16.5h.01"/></svg>
+      <span>FAQ</span>
+    </a>
+    <a class="dock-item" href="#install" data-section="install">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10M9 12h10M9 18h10M5 6h.01M5 12h.01M5 18h.01"/></svg>
+      <span>Install</span>
+    </a>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>

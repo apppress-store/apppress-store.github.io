@@ -90,4 +90,14 @@
     <image:image><image:loc>https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-how-to-draw-jmc-sketch.webp</image:loc></image:image>
     <image:image><image:loc>https://apppress-store.github.io/assets/jmc-sheet-maker/jmc-sheet-maker-dark-mode.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://apppress-store.github.io/fwd-target/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://apppress-store.github.io/assets/fwd-target/fwd-target-targets.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/fwd-target/fwd-target-design-inputs.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/fwd-target/fwd-target-survey-plan.webp</image:loc></image:image>
+    <image:image><image:loc>https://apppress-store.github.io/assets/fwd-target/fwd-target-check-survey.webp</image:loc></image:image>
+  </url>
 </urlset>
